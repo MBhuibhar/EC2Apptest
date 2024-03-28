@@ -68,7 +68,7 @@ jobs:
         run: terraform apply -auto-approve -var-file=tfvars/backend-${{ inputs.env }}-${{ inputs.db}}.tfvars
 
       - name: Run Terraform ${{ inputs.action }} for ${{ inputs.env }} environment
-        uses: MBhuibhar/Gittest/action@main
+        uses: MBhuibhar/Gittest/terraform-action@main
         with:
           env: ${{ github.event.inputs.env }}
           action: ${{ github.event.inputs.action }}
