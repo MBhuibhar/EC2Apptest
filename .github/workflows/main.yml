@@ -45,12 +45,12 @@ jobs:
             dev)
               echo "ACCESS_KEY_ID=${{ secrets.DATALAKE_DEV_NONPROD_ACCESS_KEY }}" >> $GITHUB_ENV
               echo "SECRET_ACCESS_KEY=${{ secrets.DATALAKE_DEV_NONPROD_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
-              echo "ACCOUNT_NUMBER=904626469165" >> $GITHUB_ENV
+              echo "ACCOUNT_NUMBER=609258630391" >> $GITHUB_ENV
             ;;
             stage)
               echo "ACCESS_KEY_ID=${{ secrets.DATALAKE_DEV_NONPROD_ACCESS_KEY }}" >> $GITHUB_ENV
               echo "SECRET_ACCESS_KEY=${{ secrets.DATALAKE_DEV_NONPROD_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
-              echo "ACCOUNT_NUMBER=904626469165" >> $GITHUB_ENV
+              echo "ACCOUNT_NUMBER=609258630391" >> $GITHUB_ENV
             ;;
           esac
         shell: bash
