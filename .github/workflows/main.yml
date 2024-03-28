@@ -54,9 +54,6 @@ jobs:
             ;;
           esac
         shell: bash
-      
-      - name: Working directory
-        run: ./infra/terraform
              
       - name: Terraform init
         run: terraform init
