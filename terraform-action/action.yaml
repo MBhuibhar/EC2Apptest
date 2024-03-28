@@ -1,0 +1,134 @@
+name: 'Terraform-Action'
+description: 'Run Terraform action'
+inputs:
+  env:
+    description: 'Environment to deploy. Valid options: dev|stage|prod'
+    required: true
+  terraform-version:
+    description: 'Version of terraform to use'
+    default: '1.3.3'
+    required: false
+  action:
+    description: 'plan or apply'
+    required: true
+  aws-region:
+    description: 'AWS Region'
+    default: 'eu-west-1'
+    required: false
+  aws-access-key-id:
+    description: 'AWS Access key ID'
+    required: true
+  aws-secret-access-key:
+    description: 'AWS Secret Access key'
+    required: true
+  aws-assume-role:
+    description: 'AWS role to assume'
+    required: true
+  working-directory:
+    description: 'Working Directory where to run terraform'
+    default: './infra/terraform'
+    required: false
+  use-tfvars:
+    description: 'Use tfvars in action'
+    default: "true"
+    required: false
+  tfvar-override:
+    description: 'Override tfvar path'
+    default: ""
+    required: false
+  state-bucket:
+    description: 'S3 Bucket for statefile'
+    default: ""
+    required: false
+  state-key:
+    description: 'Terraform state S3 key'
+    default: ""
+    required: false
+  backend-var-file:
+    description: 'Varfile for backend configuration'
+    default: ""
+    required: false
+  daf-app-id:
+    description: 'DAF App ID to access repositories'
+    required: true
+  daf-app-secret:
+    description: 'DAF App secret to access repositories'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+
+  - name: Configure AWS Credentials
+    uses: aws-actions/configure-aws-credentials@v2
+    with:
+      aws-access-key-id: ${{ inputs.aws-access-key-id }}
+      aws-secret-access-key: ${{ inputs.aws-secret-access-key }}
+      aws-region: ${{ inputs.aws-region }}
+
+  - name: Setup Terraform
+    uses: hashicorp/setup-terraform@v2
+    with:
+      terraform_version: ${{ inputs.terraform-version }}
+
+  - name: App token
+    id: app-token
+    uses: getsentry/action-github-app-token@v2
+    with:
+      app_id: ${{ inputs.daf-app-id }}
+      private_key: ${{ inputs.daf-app-secret }}
+
+  - uses: de-vri-es/setup-git-credentials@v2
+    with:
+      credentials: https://user:${{ steps.app-token.outputs.token }}@github.com
+
+  - name: Set tfvar file
+    if: ${{ (inputs.use-tfvars == 'true') }}
+    id: tfvar
+    run: |
+      if [[ ! -z "${{ inputs.tfvar-override }}" ]]
+        then
+          echo "TFVARS=-var-file ${{ inputs.tfvar-override }}"  >> "$GITHUB_OUTPUT"
+        else
+          echo "TFVARS=-var-file tfvars/${{ inputs.env }}.tfvars" >> "$GITHUB_OUTPUT"
+      fi
+    shell: bash
+
+  - name: Backend configuration
+    id: backend
+    working-directory: ${{ inputs.working-directory }}
+    run: |
+      BACKEND_CONFIG=" -backend-config=role_arn=${{ inputs.aws-assume-role }}"
+      if [[ -z "${{ inputs.backend-var-file }}" ]]
+        then
+          BACKEND_CONFIG="${BACKEND_CONFIG} -backend-config=bucket=${{ inputs.state-bucket }}"
+          if [[ ! -z "${{ inputs.state-key }}" ]]
+              then
+                BACKEND_CONFIG="${BACKEND_CONFIG} -backend-config=key=${{ inputs.state-key }}"
+          fi
+        else
+          BACKEND_CONFIG="${BACKEND_CONFIG} -backend-config=${{ inputs.backend-var-file }}"
+      fi
+      echo "BACKEND-CONFIG=$BACKEND_CONFIG" >> "$GITHUB_OUTPUT"
+    shell: bash
+
+  - name: Execute terraform
+    env:
+      EXEC: ${{ inputs.action }}
+    working-directory: ${{ inputs.working-directory }}
+    run: |
+      terraform init ${{ steps.tfvar.outputs.TFVARS }} ${{ steps.backend.outputs.BACKEND-CONFIG }}
+      terraform validate
+      if [[ "${EXEC}" == "plan" ]]
+      then
+        terraform plan ${{ steps.tfvar.outputs.TFVARS }} -input=false
+      fi
+      if [[ "${EXEC}" == "apply" ]]
+      then
+        terraform apply ${{ steps.tfvar.outputs.TFVARS }} -auto-approve -input=false
+      fi
+      if [[ "${EXEC}" == "destroy" ]]
+      then
+        terraform destroy ${{ steps.tfvar.outputs.TFVARS }} -auto-approve -input=false
+      fi
+    shell: bash
