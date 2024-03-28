@@ -48,12 +48,6 @@ inputs:
     description: 'Varfile for backend configuration'
     default: ""
     required: false
-  daf-app-id:
-    description: 'DAF App ID to access repositories'
-    required: true
-  daf-app-secret:
-    description: 'DAF App secret to access repositories'
-    required: true
 
 runs:
   using: "composite"
@@ -70,17 +64,6 @@ runs:
     uses: hashicorp/setup-terraform@v2
     with:
       terraform_version: ${{ inputs.terraform-version }}
-
-  - name: App token
-    id: app-token
-    uses: getsentry/action-github-app-token@v2
-    with:
-      app_id: ${{ inputs.daf-app-id }}
-      private_key: ${{ inputs.daf-app-secret }}
-
-  - uses: de-vri-es/setup-git-credentials@v2
-    with:
-      credentials: https://user:${{ steps.app-token.outputs.token }}@github.com
 
   - name: Set tfvar file
     if: ${{ (inputs.use-tfvars == 'true') }}
