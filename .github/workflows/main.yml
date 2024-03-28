@@ -55,20 +55,16 @@ jobs:
           esac
         shell: bash
              
-      - name: Terraform init
-        run: terraform init
-
-      - name: Terraform plan
-        run: terraform plan -var-file=tfvars/backend-${{ inputs.env }}-${{ inputs.db}}.tfvars
-
-      - name: Terraform apply
-        run: terraform apply -auto-approve -var-file=tfvars/backend-${{ inputs.env }}-${{ inputs.db}}.tfvars
+      - name: Set directory
+        id: set-directory
+        run: echo "directory=./infra/terraform" >> "$GITHUB_OUTPUT"
 
       - name: Run Terraform ${{ inputs.action }} for ${{ inputs.env }} environment
         uses: ./terraform-action
         with:
           env: ${{ github.event.inputs.env }}
           action: ${{ github.event.inputs.action }}
+          working-directory: ${{ steps.set-directory.outputs.directory }}
           aws-access-key-id: ${{ env.ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ env.SECRET_ACCESS_KEY }}
           aws-assume-role: "arn:aws:iam::${{ env.ACCOUNT_NUMBER }}:role/EC2-AdminAccess"
