@@ -56,7 +56,7 @@ jobs:
         shell: bash
       
       - name: Working directory
-        run: ./ecr-repo
+        run: ./infra/terraform
              
       - name: Terraform init
         run: terraform init
