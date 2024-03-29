@@ -19,7 +19,7 @@ variable "aws_region" {}
 
 variable "key" {}
 
-variable "region" {}
+#variable "region" {}
 
 variable "bucket" {}
 
