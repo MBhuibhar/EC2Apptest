@@ -23,7 +23,7 @@ variable "region" {}
 
 variable "bucket" {}
 
-#variable "assume_role" {}
+variable "assume_role" {}
 
 #variable "account_id" {}
 
