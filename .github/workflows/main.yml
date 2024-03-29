@@ -62,7 +62,7 @@ jobs:
       - name: Run Terraform ${{ inputs.action }} for ${{ inputs.env }} environment
         uses: ./terraform-action
         env:
-          TF_VAR_assume_role: "arn:aws:iam::${{ env.ACCOUNT_NUMBER }}:role/PACCAR-PowerUserRole"
+          TF_VAR_assume_role: "arn:aws:iam::${{ env.ACCOUNT_NUMBER }}:role/Github-ActionTest"
           TF_VAR_account_id: ${{ secrets.ACCOUNT_ID }}
         with:
           env: ${{ github.event.inputs.env }}
