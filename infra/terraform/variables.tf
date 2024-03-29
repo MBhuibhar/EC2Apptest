@@ -1,7 +1,7 @@
-variable "account_name" {
+/*variable "account_name" {
   type        = string
   description = "Name of the account we want to deploy to"
-}
+}*/
 
 variable "account_selector" {
   description = "Select the account we will be working on"
@@ -11,11 +11,11 @@ variable "account_selector" {
     "prod"  : ""
   }
 }
-variable "db" {}
+#variable "db" {}
 
 variable "env" {}
 
-variable "aws_region" {}
+#variable "aws_region" {}
 
 variable "key" {}
 
