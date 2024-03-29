@@ -15,7 +15,10 @@ variable "account_selector" {
 
 variable "env" {}
 
-#variable "aws_region" {}
+variable "aws_region" {
+  default = eu-west-1
+  type    = string
+}
 
 variable "key" {}
 
