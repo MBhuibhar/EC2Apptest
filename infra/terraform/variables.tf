@@ -15,11 +15,11 @@ variable "db" {}
 
 variable "env" {}
 
-variable "aws_region" {}
+#variable "aws_region" {}
 
 variable "key" {}
 
-#variable "region" {}
+variable "region" {}
 
 variable "bucket" {}
 
