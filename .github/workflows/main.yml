@@ -70,3 +70,4 @@ jobs:
           aws-assume-role: "arn:aws:iam::${{ env.ACCOUNT_NUMBER }}:role/Github-ActionTest"
           state-bucket: "terraform-state-${{ github.event.inputs.env }}-${{ env.ACCOUNT_NUMBER }}"
           backend-var-file: "tfvars/backend-${{ inputs.env }}-${{ inputs.db }}.tfvars"
+          tfvar-override: "tfvars/${{ inputs.env }}-${{ inputs.db }}.tfvars"
