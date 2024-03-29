@@ -11,7 +11,7 @@ variable "account_selector" {
     "prod"  : ""
   }
 }
-#variable "db" {}
+variable "db" {}
 
 variable "env" {}
 
