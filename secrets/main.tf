@@ -9,7 +9,7 @@ resource "aws_secretsmanager_secret" "secret_masterDB" {
     
 }
 
-resource "aws-secretsmanager_secret_version" "creds" {
+resource "aws_secretsmanager_secret_version" "creds" {
     secret_id = aws_secretsmanager_secret.secret_masterDB.id
     secret_string = <<EOF
     {
