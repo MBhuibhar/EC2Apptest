@@ -14,7 +14,7 @@ resource "aws_secretsmanager_secret_version" "creds" {
     secret_string = <<EOF
     {
         "username": "adminaccount"
-        "password": "secret_masterDB"
+        "password": "var.secret_masterDB"
     }
  EOF   
 }
