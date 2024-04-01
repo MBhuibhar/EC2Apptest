@@ -1,8 +1,8 @@
-resource "random_password" "password" {
+/*resource "random_password" "password" {
     length = 16
     special = true
 
-}
+}*/
 
 resource "aws_secretsmanager_secret" "secret_masterDB" {
     name = "pite-dldeb-${var.db}-${var.env}-admin"
