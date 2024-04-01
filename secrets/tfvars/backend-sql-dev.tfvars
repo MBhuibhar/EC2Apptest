@@ -1,3 +1,3 @@
 key    = "secret/tfstate/dev/pite-dldeb-dev-sql-admin.tfstate"
-bucket = "dafehv-terraform-state-dev-904626469165"
+bucket = "terraform-state-dev-609258630391"
 region = "eu-central-1"
