@@ -41,7 +41,7 @@ variable "eeano" {
 }
 
 
-*/variable "secret_masterDB" {
+/*variable "secret_masterDB" {
     description = "database administrator password"
     type = string
     sensitive = true
