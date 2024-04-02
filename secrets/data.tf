@@ -27,7 +27,7 @@ data "aws_secretsmanager_secrets" "dbUser" {
 }
 
 data "aws_secretsmanager_secret_version" "dbUser" {
-  secret_id = data.aws_secretsmanager_secrets.dbUser.arns
+  secret_id = data.aws_secretsmanager_secrets.dbUser.secret_string
 }
 
 /*data "aws_secretsmanager_secret" "gcs_kafka_secrets" {
