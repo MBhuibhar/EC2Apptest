@@ -14,7 +14,6 @@ data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
       "secretsmanager:GetSecretValue"
     ]
     resources = [
-      tolist(data.aws_secretsmanager_secrets.dbUser.arns),
       data.aws_secretsmanager_secret.dbUser.arn
     ]
   }
@@ -28,7 +27,7 @@ data "aws_secretsmanager_secrets" "dbUser" {
 }
 
 data "aws_secretsmanager_secret_version" "dbUser" {
-  secret_id = tolist(data.aws_secretsmanager_secrets.dbUser.arns)
+  secret_id = (data.aws_secretsmanager_secrets.dbUser.arns)
 }
 
 /*data "aws_secretsmanager_secret" "gcs_kafka_secrets" {
