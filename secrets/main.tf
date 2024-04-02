@@ -9,7 +9,7 @@ resource "aws_secretsmanager_secret" "dbUser" {
     
 }
 
-resource "aws_secretsmanager_secret_version" "dbUser" {
+resource "aws_secretsmanager_secret_version" "dbUser_creds" {
     secret_id = aws_secretsmanager_secret.dbUser.id
     secret_string = <<EOF
     {
