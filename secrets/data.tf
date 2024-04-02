@@ -4,5 +4,5 @@ data "aws_secretsmanager_secret" "secret_masterDB" {
 }
 
 data "aws_secretsmanager_secret_version" "creds" {
-    secret_id = data.aws_secretsmanager_secret.secret_masterDB.arn
+    secret_id = tolist(data.aws_secretsmanager_secret.secret_masterDB.arn)[0]
 }
