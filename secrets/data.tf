@@ -28,7 +28,6 @@ data "aws_secretsmanager_secrets" "dbUser" {
 
 data "aws_secretsmanager_secret_version" "dbUser" {
   secret_id = data.aws_secretsmanager_secrets.dbUser.id
-  secret_string = var.dbUser
 }
 
 /*data "aws_secretsmanager_secret" "gcs_kafka_secrets" {
