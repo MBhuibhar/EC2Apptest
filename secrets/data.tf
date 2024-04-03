@@ -3,9 +3,9 @@ data "aws_secretsmanager_secret" "dbUser" {
   
 }
 
-/*data "aws_secretsmanager_secret_version" "dbUser" {
-    secret_id = data.aws_secretsmanager_secret.dbUser.arn
-}*/
+data "aws_secretsmanager_secret_version" "dbUser" {
+    secret_id = data.aws_secretsmanager_secret.dbUser.id
+}
 
 data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
   statement {
