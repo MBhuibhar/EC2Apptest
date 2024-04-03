@@ -5,7 +5,7 @@
 }*/
 
 resource "aws_secretsmanager_secret" "dbUser" {
-    name = "pite-dldeb-${var.db}-${var.env}-adminTest"
+    name = "pite-dldeb-${var.db}-${var.env}-adminTes1t"
     recovery_window_in_days = 7
     
 }
