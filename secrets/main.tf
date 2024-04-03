@@ -1,11 +1,11 @@
-/*resource "random_password" "password" {
+resource "random_password" "password" {
     length = 16
     special = true
 
-}*/
+}
 
 resource "aws_secretsmanager_secret" "dbUser" {
-    name = "pite-dldeb-${var.db}-${var.env}-admin2"
+    name = "pite-dldeb-${var.db}-${var.env}-admin3"
     
 }
 
@@ -14,7 +14,7 @@ resource "aws_secretsmanager_secret_version" "dbUser" {
     secret_string = <<EOF
     {
         "username": "adminaccount"
-        "password": var.dbUser
+        "password": "${random_password.password}"
     }
  EOF   
 }
