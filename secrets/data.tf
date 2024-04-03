@@ -1,10 +1,10 @@
-data "aws_secretsmanager_secret" "dbUser" {
-    arn = aws_secretsmanager_secret.dbUser.arn
+data "aws_secretsmanager_secret" "masterDB" {
+    arn = aws_secretsmanager_secret.masterDB.arn
   
 }
 
-data "aws_secretsmanager_secret_version" "dbUser" {
-    secret_id = data.aws_secretsmanager_secret.dbUser.id
+data "aws_secretsmanager_secret_version" "creds" {
+    secret_id = data.aws_secretsmanager_secret.masterDB.id
 }
 
 data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
@@ -14,15 +14,15 @@ data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
       "secretsmanager:GetSecretValue"
     ]
     resources = [
-      data.aws_secretsmanager_secret.dbUser.arn
+      data.aws_secretsmanager_secret.masterDB.arn
     ]
   }
 }
 
-data "aws_secretsmanager_secrets" "dbUser" {
+data "aws_secretsmanager_secrets" "masterDB" {
   filter {
     name   = "name"
-    values = ["pite-dldeb-${var.db}-${var.env}-adminTest2"]
+    values = ["pite-dldeb-${var.db}-${var.env}-admin"]
   }
 }
 
