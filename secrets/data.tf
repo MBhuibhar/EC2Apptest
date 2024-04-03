@@ -22,7 +22,7 @@ data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
 data "aws_secretsmanager_secrets" "dbUser" {
   filter {
     name   = "name"
-    values = ["pite-dldeb-${var.db}-${var.env}-admin4"]
+    values = ["pite-dldeb-${var.db}-${var.env}-adminTest"]
   }
 }
 
