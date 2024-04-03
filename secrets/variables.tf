@@ -41,7 +41,7 @@ variable "eeano" {
 }
 
 
-variable "db_User" {
+variable "db_pass" {
     description = "database administrator password"
     type = string
     sensitive = true
