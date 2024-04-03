@@ -4,7 +4,7 @@ data "aws_secretsmanager_secret" "dbUser" {
 }
 
 data "aws_secretsmanager_secret_version" "dbUser" {
-    secret_id = tolist(data.aws_secretsmanager_secret.dbUser.id)[0]
+    secret_id = data.aws_secretsmanager_secret.dbUser.id
 }
 
 data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
@@ -14,7 +14,6 @@ data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
       "secretsmanager:GetSecretValue"
     ]
     resources = [
-      tolist(data.aws_secretsmanager_secret.dbUser.arn)[0],
       data.aws_secretsmanager_secret.dbUser.arn
     ]
   }
