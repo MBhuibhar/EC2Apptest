@@ -13,7 +13,7 @@ resource "aws_secretsmanager_secret_version" "dbUser" {
     secret_id = aws_secretsmanager_secret.dbUser.id
     secret_string = <<EOF
     {
-        "username": adminaccount
+        "username": "adminaccount"
         "password": var.dbUser
     }
  EOF   
