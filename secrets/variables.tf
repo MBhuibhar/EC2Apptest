@@ -41,11 +41,11 @@ variable "eeano" {
 }
 
 
-variable "dbUser" {
+/*variable "dbUser" {
     description = "database administrator password"
     type = string
     sensitive = true
-}
+}*/
 
 variable "env" {}
 
