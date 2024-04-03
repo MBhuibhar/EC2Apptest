@@ -4,14 +4,14 @@
 
 }*/
 
-resource "aws_secretsmanager_secret" "dbUser" {
+resource "aws_secretsmanager_secret" "masterDB" {
     name = "pite-dldeb-${var.db}-${var.env}-admin"
     recovery_window_in_days = 7
     
 }
 
-resource "aws_secretsmanager_secret_version" "dbUser" {
-    secret_id = aws_secretsmanager_secret.dbUser.id
+resource "aws_secretsmanager_secret_version" "creds" {
+    secret_id = aws_secretsmanager_secret.masterDB.id
     secret_string = jsonencode({
         username = "adminaccount"
         password = var.db_User
