@@ -14,7 +14,7 @@ data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
       "secretsmanager:GetSecretValue"
     ]
     resources = [
-      data.aws_secretsmanager_secret.dbUser.secret_string
+      data.aws_secretsmanager_secret.dbUser.arn
     ]
   }
 }
