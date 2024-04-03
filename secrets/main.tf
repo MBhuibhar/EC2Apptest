@@ -14,6 +14,6 @@ resource "aws_secretsmanager_secret_version" "creds" {
     secret_id = aws_secretsmanager_secret.masterDB.id
     secret_string = jsonencode({
         username = "adminaccount"
-        password = var.db_User
+        password = var.db_pass
     })  
 }
