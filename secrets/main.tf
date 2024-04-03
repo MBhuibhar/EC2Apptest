@@ -5,7 +5,7 @@
 }*/
 
 resource "aws_secretsmanager_secret" "dbUser" {
-    name = "pite-dldeb-${var.db}-${var.env}-admin1"
+    name = "pite-dldeb-${var.db}-${var.env}-admin2"
     
 }
 
