@@ -5,16 +5,14 @@ resource "random_password" "password" {
 }
 
 resource "aws_secretsmanager_secret" "dbUser" {
-    name = "pite-dldeb-${var.db}-${var.env}-admin3"
+    name = "pite-dldeb-${var.db}-${var.env}-admin4"
     
 }
 
 resource "aws_secretsmanager_secret_version" "dbUser" {
     secret_id = aws_secretsmanager_secret.dbUser.id
-    secret_string = <<EOF
-    {
-        "username": "adminaccount"
-        "password": "${random_password.password}"
-    }
- EOF   
+    secret_string = jsonencode({
+        username = adminaccount
+        password = random_password.password
+    })  
 }
