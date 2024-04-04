@@ -19,6 +19,6 @@ resource "aws_secretsmanager_secret_version" "creds" {
 }
 
 output "masterDB" {
-  value = aws_secretsmanager_secret.masterDB.id.secret_string
+  value = aws_secretsmanager_secret.masterDB.name
 }
 
