@@ -11,9 +11,14 @@ resource "aws_secretsmanager_secret" "masterDB" {
 }
 
 resource "aws_secretsmanager_secret_version" "creds" {
-    secret_id = aws_secretsmanager_secret.masterDB.id
+    secret_id = aws_secretsmanager_secret.masterDB.id.name
     secret_string = jsonencode({
         username = "adminaccount"
         password = "var.db_pass"
     })  
 }
+
+output "masterDB" {
+  value = aws_secretsmanager_secret.masterDB.id.name
+}
+
