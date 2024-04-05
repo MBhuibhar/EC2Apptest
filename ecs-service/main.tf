@@ -106,9 +106,9 @@ module "pite-dldeb_services_SQL_service" {
       value = "'org.apache.kafka.common.security.plain.PlainLoginModule required username=""'$confluent_username'" password="'$confluent_password'"
     },*/
     {
-      name  = "CONNECT_CONSUMER_SECURITY_PROTOCOL"
+     /* name  = "CONNECT_CONSUMER_SECURITY_PROTOCOL"
       value = "SASL_SSL"
-    },
+    },*/
     {
       name  = "CONNECT_CONSUMER_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM"
       value = "https"
