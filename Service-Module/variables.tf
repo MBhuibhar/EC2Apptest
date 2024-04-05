@@ -109,3 +109,5 @@ variable "task_role_policy" {
   description = "Role that the task will assume to perform application related actions, like interaction with other AWS services."
   default     = ""
 }
+
+variable "env" {}
