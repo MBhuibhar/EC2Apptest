@@ -9,8 +9,8 @@ variable "account_name" {
 variable "account_selector" {
   description = "Select the account we will be working on"
   default = {
-    "daf-dev-digitaldatalake-dev"   : "904626469165"
-    "daf-dev-digitaldatalake-stage" : "904626469165"
+    "daf-dev-digitaldatalake-dev"   : "609258630391"
+    "daf-dev-digitaldatalake-stage" : "609258630391"
   }
 }
 
