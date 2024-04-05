@@ -214,18 +214,17 @@ module "pite-dldeb_services_MYSQL_service" {
   memory                         = var.fargate_resources.pite-dldeb_services_MYSQL_all_service.memory
   task_role_policy               = data.aws_iam_role.iam_role_ecs_terraform.name
   task_execution_role_policy     = data.aws_iam_role.iam_role_ecs_terraform.name
-  alb_healthcheck_interval       = 300
   container_traffic_protocol     = "tcp"
 
   container_environment_variables = [
-    {
+   /* {
       name  = "TOPIC_ENV"
       value = local.topic_environments[var.env]
     },
     {
       name  = "ENV"
       value = var.env
-    }
+    }*/
   ]
 
   container_secrets = [
