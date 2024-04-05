@@ -88,4 +88,4 @@ variable "service_name" {}
 
 variable "ecr_image" {}
 
-variable "assume_role"
+variable "assume_role" {}
