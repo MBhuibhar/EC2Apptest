@@ -23,7 +23,7 @@ module "pite-dldeb_services_SQL_service" {
     },
     {
       name  = "CONNECT_GROUP_ID"
-      value = "$confluent_svc_acc-debezium-connect-group-id-"$db"-"$deployment_version"
+      value = ""
     },
     {
       name  = "CONNECT_OFFSET_STORAGE_TOPIC"
