@@ -206,7 +206,7 @@ module "pite-dldeb_services_SQL_service" {
 
 module "pite-dldeb_services_MYSQL_service" {
   source                         = "../Service-Module/"
-  service_name                   = "${local.global_name}-dldeb-mysql-service"
+  service_name                   = "${local.global_name}-mysql-service"
   ecs_cluster_name               = "${var.account_name}-${var.env}-cluster"
   vpc_id                         = var.vpc_id
   container_port                 = 8083
