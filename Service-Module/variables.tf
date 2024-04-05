@@ -17,8 +17,6 @@ variable "vpc_id" {
   description = "VPC ID where the service will be placed"
 }
 
-variable "env" {}
-
 #########################################
 ####### Autoscaling parameters ##########
 #########################################
