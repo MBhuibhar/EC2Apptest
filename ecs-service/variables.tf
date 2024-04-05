@@ -9,8 +9,8 @@ variable "account_name" {
 variable "account_selector" {
   description = "Select the account we will be working on"
   default = {
-    "daf-dev-digitaldatalake-dev"   : "609258630391"
-    "daf-dev-digitaldatalake-stage" : "609258630391"
+    "dev-datalake-dev"   : "609258630391"
+    "dev-datalake-stage" : "609258630391"
   }
 }
 
@@ -45,32 +45,32 @@ variable "div" {
 
 variable "dept" {
   description = "Name of Departmnet for tagging "
-  default     = "53200"
+  default     = "53"
 }
 
 variable "contact" {
   description = "Name of contact for tagging "
-  default     = "daftruckseindhoven-glbamsdata@daftrucks.com"
+  default     = ""
 }
 
 variable "application" {
   description = "Name of application for tagging "
-  default     = "datalake debezium ecs"
+  default     = "ecs"
 }
 
 variable "initiator" {
   description = "Name of initiator for tagging "
-  default     = "akshay.kalambe@daftrucks.com"
+  default     = ""
 }
 
 variable "domain" {
   description = "Name of domain for tagging "
-  default     = "paccar it europe"
+  default     = ""
 }
 
 variable "billingcode" {
   description = "Name of billingcode for tagging "
-  default     = "53200"
+  default     = "53"
 }
 
 variable "eeano" {
