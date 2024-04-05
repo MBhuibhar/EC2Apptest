@@ -1,9 +1,3 @@
-#ECR Repo (1 time)
-#Docker  image (1 time per DB source. thin image)
-#ECS Service
-#task Definition
-#Tasks
-#IAM Roles
 module "pite-dldeb_services_SQL_service" {
   source                         = "../Service-Module/"
   service_name                   = "${local.global_name}-sql-service"
