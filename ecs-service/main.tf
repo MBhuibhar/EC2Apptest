@@ -217,6 +217,14 @@ module "pite-dldeb_services_MYSQL_service" {
   container_traffic_protocol     = "tcp"
 
   container_environment_variables = [
+    {
+      name  = "TOPIC_ENV"
+      value = local.topic_environments[var.env]
+    },
+    {
+      name  = "ENV"
+      value = var.env
+    }
   ]
 
   container_secrets = [
