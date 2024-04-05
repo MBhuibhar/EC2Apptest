@@ -21,10 +21,10 @@ module "pite-dldeb_services_SQL_service" {
       name  = "CONNECT_BOOTSTRAP_SERVERS"
       value = "${bootstrap_server}"
     },
-    {
+    /*{
       name  = "CONNECT_GROUP_ID"
-      value = ""
-    },
+      value = "$confluent_svc_acc-debezium-connect-group-id-""$db"-"$deployment_version"
+    },*/
     {
       name  = "CONNECT_OFFSET_STORAGE_TOPIC"
       value = "kt_gcs_${local.topic_environments[var.env]}_vehicle-data-services_fms_s3-configs_1"
@@ -102,9 +102,9 @@ module "pite-dldeb_services_SQL_service" {
       value = "SASL_SSL"
     },
     {
-      name  = "CONNECT_SASL_JAAS_CONFIG"
+      /*name  = "CONNECT_SASL_JAAS_CONFIG"
       value = "'org.apache.kafka.common.security.plain.PlainLoginModule required username=""'$confluent_username'" password="'$confluent_password'"
-    },
+    },*/
     {
       name  = "CONNECT_CONSUMER_SECURITY_PROTOCOL"
       value = "SASL_SSL"
@@ -118,9 +118,9 @@ module "pite-dldeb_services_SQL_service" {
       value = "PLAIN"
     },
     {
-      name  = CONNECT_CONSUMER_SASL_JAAS_CONFIG
+      /*name  = CONNECT_CONSUMER_SASL_JAAS_CONFIG
       value = "'org.apache.kafka.common.security.plain.PlainLoginModule required username=""'$confluent_username'" password="'$confluent_password'"  
-    },
+    },*/
     {
       name  = CONNECT_CONSUMER_REQUEST_TIMEOUT_MS
       value = "20000"
@@ -142,9 +142,9 @@ module "pite-dldeb_services_SQL_service" {
       value = "PLAIN"  
     },
     {
-      name  = CONNECT_PRODUCER_SASL_JAAS_CONFIG
+     /* name  = CONNECT_PRODUCER_SASL_JAAS_CONFIG
       value = "'org.apache.kafka.common.security.plain.PlainLoginModule required username=""'$confluent_username'" password="'$confluent_password'"
-    },
+    },*/
     {
       name  = CONNECT_PRODUCER_REQUEST_TIMEOUT_MS
       value = "20000"  
