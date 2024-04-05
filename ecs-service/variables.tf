@@ -80,7 +80,7 @@ variable "eeano" {
 
 variable "security_group_id" {}
 
-#variable "env" {}
+variable "env" {}
 
 variable "aws_region" {}
 
