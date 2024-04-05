@@ -112,75 +112,75 @@ module "pite-dldeb_services_SQL_service" {
     {
       name  = "CONNECT_CONSUMER_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM"
       value = "https"
-    }
+    },
     {
       name  = CONNECT_CONSUMER_SASL_MECHANISM
       value = "PLAIN"
-    }
+    },
     {
       name  = CONNECT_CONSUMER_SASL_JAAS_CONFIG
-      value = "'org.apache.kafka.common.security.plain.PlainLoginModule required username=""'$confluent_username'" password="'$confluent_password'";"  
-    }
+      value = "'org.apache.kafka.common.security.plain.PlainLoginModule required username=""'$confluent_username'" password="'$confluent_password'"  
+    },
     {
       name  = CONNECT_CONSUMER_REQUEST_TIMEOUT_MS
       value = "20000"
-    }
+    },
     {
       name  = CONNECT_CONSUMER_RETRY_BACKOFF_MS
       value = "500"
-    }
+    },
     {
       name  = CONNECT_PRODUCER_SECURITY_PROTOCOL
       value = "SASL_SSL"  
-    }
+    },
     {
       name  = CONNECT_PRODUCER_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM
-      value = "https"  
-    }
+      value = "https"
+    },
     {
       name  = CONNECT_PRODUCER_SASL_MECHANISM
       value = "PLAIN"  
-    }
+    },
     {
       name  = CONNECT_PRODUCER_SASL_JAAS_CONFIG
-      value = 'org.apache.kafka.common.security.plain.PlainLoginModule required username="'$confluent_username'" password="'$confluent_password'";'
-    }
+      value = "'org.apache.kafka.common.security.plain.PlainLoginModule required username=""'$confluent_username'" password="'$confluent_password'"
+    },
     {
       name  = CONNECT_PRODUCER_REQUEST_TIMEOUT_MS
       value = "20000"  
-    }
+    },
     {
       name  = CONNECT_PRODUCER_RETRY_BACKOFF_MS
       value = "500"  
-    }
+    },
     {
       name  = CONNECT_LOG4J_APPENDER_STDOUT_LAYOUT_CONVERSIONPATTERN
-      value = '[%d] %p %X{connector.context}%m (%c:%L)%n'  
-    }
+      value = "[%d] %p %X{connector.context}%m (%c:%L)%n"  
+    },
     {
       name  = CONNECT_CUB_KAFKA_TIMEOUT
       value = "300"  
-    }
+    },
     {
       name  = CONNECT_REST_ADVERTISED_HOST_NAME
       value = "localhost"  
-    }
+    },
     {
       name  = CONNECT_REST_PORT
       value = "8083"  
-    }
+    },
     {
       name  = CONNECT_LOG4J_ROOT_LOGLEVEL
       value = "INFO"
-    }
+    },
     {
       name  = ENV CONNECT_LOG4J_LOGGERS
       value = "org.apache.kafka.connect.runtime.rest=WARN,org.reflections=ERROR"
-    }
+    },
     {
       name  = ENV CONNECT_PLUGIN_PATH
       value = "/usr/share/java,/usr/share/confluent-hub-components/"  
-    }
+    },
   ]
 
   container_secrets = [
