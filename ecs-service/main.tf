@@ -103,7 +103,7 @@ module "pite-dldeb_services_SQL_service" {
     },
     {
       name  = "CONNECT_SASL_JAAS_CONFIG"
-      value = "org.apache.kafka.common.security.plain.PlainLoginModule required username=""'$confluent_username'" password="'$confluent_password'";
+      value = "org.apache.kafka.common.security.plain.PlainLoginModule required username=""'$confluent_username'" password="'$confluent_password'";"
     },
     {
       name  = "CONNECT_CONSUMER_SECURITY_PROTOCOL"
@@ -119,7 +119,7 @@ module "pite-dldeb_services_SQL_service" {
     }
     {
       name  = CONNECT_CONSUMER_SASL_JAAS_CONFIG
-      value = 'org.apache.kafka.common.security.plain.PlainLoginModule required username="'$confluent_username'" password="'$confluent_password'";'  
+      value = "'org.apache.kafka.common.security.plain.PlainLoginModule required username=""'$confluent_username'" password="'$confluent_password'";"  
     }
     {
       name  = CONNECT_CONSUMER_REQUEST_TIMEOUT_MS
