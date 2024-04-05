@@ -3,7 +3,7 @@ locals {
   ecr_latest_image    = data.external.ecr_latest_image.result.image_tag == "" ? "latest" : data.external.ecr_latest_image.result.image_tag
   container_definition = {
     name        = var.service_name
-    image       = var.ecr_image == "" ? "${aws_ecr_repository.this[0].repository_url}:${local.ecr_latest_image}" : var.ecr_image
+    image       = var.ecr_image == "" ? "${local.ecr_repository_name.repository_url}:${local.ecr_latest_image}" : var.ecr_image
     command     = var.command_override
     environment = var.container_environment_variables
     secrets     = var.container_secrets
