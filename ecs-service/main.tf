@@ -5,7 +5,7 @@
 #Tasks
 #IAM Roles
 module "pite-dldeb_services_SQL_service" {
-  source                         = "./Service-Module"
+  source                         = "../Service-Module"
   service_name                   = "${local.global_name}-sql-service"
   ecs_cluster_name               = "${var.account_name}-${var.env}-cluster"
   vpc_id                         = var.vpc_id
