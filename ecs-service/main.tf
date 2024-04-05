@@ -217,7 +217,7 @@ module "pite-dldeb_services_MYSQL_service" {
     },
     {
       name  = "ENV"
-      value = var.env
+      value = "var.env"
     }
   ]
 
