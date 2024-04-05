@@ -1,7 +1,6 @@
 ####################################
 ##### Control Variables ############
 ####################################
-
 variable "account_name" {
   type        = string
   description = "Name of the account we want to deploy to"
@@ -34,7 +33,6 @@ variable "fargate_resources" {
       cpu    = "4096"
       memory = "30720"
     }
-    
   }
 }
 
@@ -85,8 +83,6 @@ variable "security_group_id" {}
 variable "env" {}
 
 variable "aws_region" {}
-
-variable "account_name" {}
 
 variable "service_name" {}
 
