@@ -24,7 +24,7 @@ module "pite-dldeb_services_SQL_service" {
     {
       name  = "CONNECT_GROUP_ID"
       value = "$confluent_svc_acc-debezium-connect-group-id-""$db"-"$deployment_version"
-    },
+    }
     {
       name  = "CONNECT_OFFSET_STORAGE_TOPIC"
       value = "kt_gcs_${local.topic_environments[var.env]}_vehicle-data-services_fms_s3-configs_1"
