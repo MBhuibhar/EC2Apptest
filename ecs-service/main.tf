@@ -1,6 +1,7 @@
-module "ecr_repository_name" {
+/*module "ecr_repository_name" {
   source = "../infra/terraform/"
-}
+}*/
+
 module "pite-dldeb_services_SQL_service" {
   source                         = "../Service-Module/"
   service_name                   = "${local.global_name}-sql-service"
