@@ -110,4 +110,8 @@ variable "task_role_policy" {
   default     = ""
 }
 
-variable "env" {}
+variable "env" {
+  type        = string
+  description = "Environment"
+  default     = ""
+}
