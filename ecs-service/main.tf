@@ -1,5 +1,5 @@
 module "ecr_repository_name" {
-  source = "...//terraform/"
+  source = "../infra/terraform/"
 }
 module "pite-dldeb_services_SQL_service" {
   source                         = "../Service-Module/"
