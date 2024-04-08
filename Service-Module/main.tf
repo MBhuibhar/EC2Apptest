@@ -1,5 +1,5 @@
 module "ecr_repository_name" {
-  source = "./././terraform"
+  source = "./././terraform/"
 }
 
 resource "aws_cloudwatch_log_group" "this" {
