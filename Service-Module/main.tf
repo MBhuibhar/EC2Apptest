@@ -1,6 +1,6 @@
-module "ecr_repository_name" {
+/*module "ecr_repository_name" {
   source = ".../terraform/"
-}
+}*/
 
 resource "aws_cloudwatch_log_group" "this" {
   name              = "/aws/ecs/${var.service_name}-logs"
