@@ -1,6 +1,6 @@
-#module "ecr_repository_name" {
-  #source = "./ecr-repo"
-#}
+module "ecr_repository_name" {
+  source = "./ecr-repo"
+}
 
 resource "aws_cloudwatch_log_group" "this" {
   name              = "/aws/ecs/${var.service_name}-logs"
