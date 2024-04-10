@@ -93,7 +93,7 @@ data "aws_ecr_repository" "ecr_repo" {
   name = "pite-dldeb-${var.env}-${var.db}-ecr-repo"
 }
 
-/*data "aws_iam_policy" "SecretsManagerReadWrite" {
+data "aws_iam_policy" "SecretsManagerReadWrite" {
   arn = "arn:aws:iam::aws:policy/SecretsManagerReadWrite"
 }
 
@@ -119,4 +119,4 @@ data "aws_iam_policy" "pite-dldeb-infra-setup-policy" {
 }
 data "aws_iam_policy" "pite-dldeb-pullfromecr" {
   name = "pite-dldeb-${var.env}-pullfromecr"
-}*/
+}
