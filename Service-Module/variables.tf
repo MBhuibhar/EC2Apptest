@@ -17,6 +17,18 @@ variable "vpc_id" {
   description = "VPC ID where the service will be placed"
 }
 
+variable "env" {}
+
+variable "db" {
+  description = "Service name"
+  type = string
+  default = ""
+}
+
+variable "account_id" {
+  type = string
+  description = "AWS Account id"
+}
 #########################################
 ####### Autoscaling parameters ##########
 #########################################
