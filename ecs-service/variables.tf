@@ -6,13 +6,13 @@ variable "account_name" {
   description = "Name of the account we want to deploy to"
 }
 
-/*variable "aws_account_id" {
+variable "aws_account_id" {
   description = "Select the account we will be working on"
   default = {
     "dev-datalake-dev"   : "609258630391"
     "dev-datalake-stage" : "609258630391"
   }
-}*/
+}
 
 variable "vpc_id" {
   type        = string
