@@ -1,5 +1,5 @@
 resource "aws_iam_role" "iam_role_ecs_terraform" {
-  name = "pite-dldeb-${var.env}-iam-role"
+  name = "pite-dldeb-${var.env}-ecs-iam-role"
   
   assume_role_policy = <<-EOF
   {
