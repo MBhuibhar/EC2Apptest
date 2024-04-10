@@ -1,4 +1,4 @@
-data "aws_iam_policy_document" "ecs_assume_policy" {
+/*data "aws_iam_policy_document" "ecs_assume_policy" {
   statement {
     effect = "Allow"
     actions = [
@@ -45,7 +45,7 @@ data "aws_iam_policy_document" "ecs_module_managed_execution_role_policy" {
       ]
     }
   }
-}
+}*/
 
 data "aws_availability_zones" "available_az" {
   state = "available"
@@ -108,4 +108,16 @@ data "aws_iam_policy" "CloudWatchAgentServerPolicy" {
 
 data "aws_iam_policy" "AmazonSNSFullAccess" {
   arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
+}
+data "aws_iam_role" "iam_role_ecs_terraform" {
+  name = "pite-dldeb-${var.env}-ecs-iam-role"
+}
+data "aws_iam_policy" "pite-dldeb-Pull_image_dlake" {
+  name = "pite-dldeb-${var.env}-Pull_image_dlake"
+}
+data "aws_iam_policy" "pite-dldeb-infra-setup-policy" {
+  name = "pite-dldeb-${var.env}-infra-setup-policy"
+}
+data "aws_iam_policy" "pite-dldeb-pullfromecr" {
+  name = "pite-dldeb-${var.env}-pullfromecr"
 }
