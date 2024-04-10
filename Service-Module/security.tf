@@ -22,22 +22,6 @@ resource "aws_iam_role" "iam_role_ecs_terraform" {
 # # AWS IAM role policy
 # #################################################################
 
-data "aws_iam_policy" "SecretsManagerReadWrite" {
-  arn = "arn:aws:iam::aws:policy/SecretsManagerReadWrite"
-}
-
-data "aws_iam_policy" "AmazonSQSFullAccess" {
-  arn = "arn:aws:iam::aws:policy/AmazonSQSFullAccess"
-}
-
-data "aws_iam_policy" "CloudWatchAgentServerPolicy" {
-  arn = "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
-}
-
-data "aws_iam_policy" "AmazonSNSFullAccess" {
-  arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
-}
-
 resource "aws_iam_policy" "pite-dldeb-Pull_image_dlake" {
   name = "pite-dldeb-${var.env}-Pull_image_dlake"
 
