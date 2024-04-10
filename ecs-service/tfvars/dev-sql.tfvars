@@ -17,7 +17,8 @@ fargate_resources    = {
     pite-dldeb_services_SQL_all_service = {
       cpu    = "4096"
       memory = "30720"
-}   pite-dldeb_services_MYSQL_all_service = {
+}   
+pite-dldeb_services_MYSQL_all_service = {
       cpu    = "4096"
       memory = "30720"
     }
