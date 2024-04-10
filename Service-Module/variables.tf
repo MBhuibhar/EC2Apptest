@@ -22,6 +22,10 @@ variable "db" {
   type = string
   default = ""
 }
+variable "account_id" {
+  description = "Select the account we will be working on"
+  type = string
+}
 #########################################
 ####### Autoscaling parameters ##########
 #########################################
