@@ -93,3 +93,19 @@ data "aws_ecr_repository" "ecr_repo" {
   name = "${account_id}.dkr.ecr.eu-central-1.amazonaws.com/pite-dldeb-${var.env}-${var.db}-ecr-repo"
   repository_url = aws_ecr_repository.ecr_repo.name
 }
+
+data "aws_iam_policy" "SecretsManagerReadWrite" {
+  arn = "arn:aws:iam::aws:policy/SecretsManagerReadWrite"
+}
+
+data "aws_iam_policy" "AmazonSQSFullAccess" {
+  arn = "arn:aws:iam::aws:policy/AmazonSQSFullAccess"
+}
+
+data "aws_iam_policy" "CloudWatchAgentServerPolicy" {
+  arn = "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+}
+
+data "aws_iam_policy" "AmazonSNSFullAccess" {
+  arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
+}
