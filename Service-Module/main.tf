@@ -11,7 +11,7 @@ resource "aws_ecs_task_definition" "this" {
   family                   = var.service_name
   cpu                      = var.cpu
   memory                   = var.memory
-  network_mode             = "awsvpc"
+  network_mode             = var.vpc_id
   requires_compatibilities = ["FARGATE"]
   execution_role_arn       = aws_iam_role.iam_role_ecs_terraform.arn
   task_role_arn            = aws_iam_role.iam_role_ecs_terraform.arn
