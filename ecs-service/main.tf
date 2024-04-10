@@ -10,8 +10,8 @@ module "pite-dldeb_services_SQL_service" {
   container_port                 = 8083
   cpu                            = var.fargate_resources.pite-dldeb_services_SQL_all_service.cpu
   memory                         = var.fargate_resources.pite-dldeb_services_SQL_all_service.memory
-  task_role_policy               = data.aws_iam_role.iam_role_ecs_terraform.name
-  task_execution_role_policy     = data.aws_iam_role.iam_role_ecs_terraform.name
+  task_role_policy               = module.aws_iam_role.iam_role_ecs_terraform.ecs_role.name
+  task_execution_role_policy     = module.aws_iam_role.iam_role_ecs_terraform.ecs_role.name
   container_traffic_protocol     = "tcp"
   account_id                     = ""
 
@@ -211,8 +211,8 @@ module "pite-dldeb_services_MYSQL_service" {
   container_port                 = 8083
   cpu                            = var.fargate_resources.pite-dldeb_services_MYSQL_all_service.cpu
   memory                         = var.fargate_resources.pite-dldeb_services_MYSQL_all_service.memory
-  task_role_policy               = data.aws_iam_role.iam_role_ecs_terraform.name
-  task_execution_role_policy     = data.aws_iam_role.iam_role_ecs_terraform.name
+  task_role_policy               = module.aws_iam_role.iam_role_ecs_terraform.ecs_role.name
+  task_execution_role_policy     = module.aws_iam_role.iam_role_ecs_terraform.ecs_role.name
   container_traffic_protocol     = "tcp"
   account_id                     = ""
 
