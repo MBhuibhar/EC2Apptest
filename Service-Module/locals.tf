@@ -1,6 +1,6 @@
 locals {
-  ecr_repository_name = module.aws_ecr_repository.ecr_name
-  ecr_latest_image    = data.external.ecr_latest_image.result.image_tag == "" ? "latest" : data.external.ecr_latest_image.result.image_tag
+  ecr_repository_name = data.aws_ecr_repository.ecr_repo.name
+  ecr_latest_image    = data.aws_ecr_repository.ecr_repo.name == "" ? "latest" : data.aws_ecr_repository.ecr_repo.name
   container_definition = {
     name        = var.service_name
     image       = var.ecr_image == "" ? "${local.ecr_repository_name.repository_url}:${local.ecr_latest_image}" : var.ecr_image
@@ -26,25 +26,4 @@ locals {
   }
   private_subnet_ids = [for k, v in data.aws_subnets.private_subnets : length(v.ids) > 0 ? v.ids[0] : ""]
 }
-/*locals {
-  env = "dev"
-  dev = {             
-  security_group  = data.aws_security_group.ecs_dev_sg.name                     #need to set condition for prod
-  vpc_id          = "vpc-0be9984772fa33a6b"                                      #need to check condition for prod
-  private_subnet1 = "subnet-09dacc0e93e6e65e8"
-  private_subnet2 = "subnet-0b8d8a23586b6560e"
-  aws-aws_region  = "eu-central-1"
-  }
-}
-locals {
-  env  = "prod"
-  prod = {
-  security_group  = data.aws_security_group.ecs_prod_sg.name                     
-  vpc_id          = ""                                      
-  private_subnet1 = ""
-  private_subnet2 = ""
-  aws-aws_region  = "eu-central-1"
-  }
-}*/
-
 
