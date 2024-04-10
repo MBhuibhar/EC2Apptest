@@ -252,4 +252,3 @@ resource "aws_iam_role_policy_attachment" "pite-dldeb-pullfromecr_dlake" {
   role       = aws_iam_role.iam_role_ecs_terraform.name
   policy_arn = aws_iam_policy.pite-dldeb-pullfromecr.arn
 }
-}
