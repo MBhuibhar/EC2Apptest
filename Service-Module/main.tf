@@ -20,7 +20,7 @@ resource "aws_ecs_task_definition" "this" {
 }
 
 resource "aws_ecs_service" "this" {
-  depends_on             = [aws_iam_role.task_role]
+ #depends_on             = [aws_iam_role.task_role]
   name                   = var.service_name
   cluster                = data.aws_ecs_cluster.this.arn
   task_definition        = aws_ecs_task_definition.this.arn
