@@ -17,7 +17,7 @@ module "pite-dldeb_services_SQL_service" {
   container_environment_variables = [
     {
       name  = "CONNECT_BOOTSTRAP_SERVERS"
-      value = "${bootstrap_server}"
+      value = ""
     },
     /*{
       name  = "CONNECT_GROUP_ID"
@@ -184,11 +184,11 @@ module "pite-dldeb_services_SQL_service" {
   container_secrets = [
     {
       name      = "CONNECT_BOOTSTRAP_SERVERS"
-      valueFrom = "${data.aws_secretsmanager_secret.gcs_kafka_secrets.arn}:daf_kafka_bootstrap_server::"
+      valueFrom = ""
     },
     {
       name      = "CONNECT_CONFLUENT_LICENSE"
-      valueFrom = "${data.aws_secretsmanager_secret.gcs_kafka_secrets.arn}:daf_confluent_license::"
+      valueFrom = ""
     }
   ]
 
