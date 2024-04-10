@@ -1,4 +1,4 @@
-/*data "aws_iam_policy" "SecretsManagerReadWrite" {
+data "aws_iam_policy" "SecretsManagerReadWrite" {
   arn = "arn:aws:iam::aws:policy/SecretsManagerReadWrite"
 }
 
@@ -24,4 +24,4 @@ data "aws_iam_policy" "pite-dldeb-infra-setup-policy" {
 }
 data "aws_iam_policy" "pite-dldeb-pullfromecr" {
   name = "pite-dldeb-${var.env}-pullfromecr"
-}*/
+}
