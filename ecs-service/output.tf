@@ -17,6 +17,4 @@ output "MYSQL_service_ecr_repo_url" {
 output "MYSQL_service_ecr_repo_arn" {
     value     = module.pite-dldeb_services_MYSQL_service.ecr_repository_arn
 }
-output "ecs_role" {
-  value = module.service-Module.aws_iam_role.iam_role_ecs_terraform.id
-}
+
