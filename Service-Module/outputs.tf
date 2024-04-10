@@ -9,7 +9,7 @@ output "cloudwatch_log_group" {
 }
 
 output "ecr_repository_url" {
-  value       = "609258630391.dkr.ecr.eu-central-1.amazonaws.com/pite-dldeb-${var.env}-${var.service_name}-ecr-repo:latest"
+  value       = var.ecr_image == "" ? "${local.ecr_repository_name.repository_url}:latest" : var.ecr_image
   description = "ECR repository URL, either the provided one or the managed one"
 }
 
