@@ -225,7 +225,7 @@ module "pite-dldeb_services_MYSQL_service" {
     }
   ]
 
-  container_secrets = [
+  /*container_secrets = [
     {
       name      = "DAF_KAFKA_BOOTSTRAP_SERVER"
       valueFrom = "${data.aws_secretsmanager_secret.gcs_kafka_secrets.arn}:daf_kafka_bootstrap_server::"
@@ -242,7 +242,7 @@ module "pite-dldeb_services_MYSQL_service" {
       name      = "DAF_KAFKA_S3SINK_PASSWORD"
       valueFrom = "${data.aws_secretsmanager_secret.gcs_kafka_secrets.arn}:daf_kafka_s3sink_password::"
     }
-  ]
+  ]*/
 
   service_healthcheck_block = jsonencode({
     command     = ["CMD-SHELL", "echo 'Healthy'"]
