@@ -17,3 +17,6 @@ output "ecr_repository_arn" {
   value       = var.ecr_image == "" ? local.ecr_repository_name.arn : ""
   description = "If managed, the ARN of the ECR repository"
 }
+output "ecs_role" {
+  value = aws_iam_role.iam_role_ecs_terraform
+}
