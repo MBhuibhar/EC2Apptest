@@ -88,3 +88,8 @@ data "external" "ecr_latest_image" {
 data "aws_security_group" "ecs_sg" {
   name  = "daf-dev-digitaldatalake-${var.env}-generic-sg"
 }
+
+data "aws_ecr_repository" "ecr_repo" {
+  name = "${account_id}.dkr.ecr.eu-central-1.amazonaws.com/pite-dldeb-${var.env}-${var.db}-ecr-repo"
+  repository_url = aws_ecr_repository.ecr_repo.name
+}
