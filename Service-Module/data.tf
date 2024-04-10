@@ -91,7 +91,6 @@ data "aws_security_group" "ecs_sg" {
 
 data "aws_ecr_repository" "ecr_repo" {
   name = "${var.account_id}.dkr.ecr.eu-central-1.amazonaws.com/pite-dldeb-${var.env}-${var.db}-ecr-repo"
-  repository_url = aws_ecr_repository.ecr_repo.name
 }
 
 data "aws_iam_policy" "SecretsManagerReadWrite" {
