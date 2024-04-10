@@ -223,6 +223,10 @@ module "pite-dldeb_services_MYSQL_service" {
       name  = "ENV"
       value = var.env
     }
+    {
+      name  = "Account_id"
+      value = var.account_id
+    }
   ]
 
   container_secrets = [
