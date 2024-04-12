@@ -125,11 +125,3 @@ variable "env" {
   description = "Environment"
   default     = ""
 }
-variable "Subnet1" {
-  type        = string
-  description = "Subnet"
-}
-variable "Subnet2" {
-  type        = string
-  description = "Subnet"
-}
