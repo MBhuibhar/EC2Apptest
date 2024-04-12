@@ -11,16 +11,16 @@ resource "aws_ecs_task_definition" "this" {
   family                   = var.service_name
   cpu                      = var.cpu
   memory                   = var.memory
-  network_mode             = var.vpc_id
+  network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
   execution_role_arn       = aws_iam_role.iam_role_ecs_terraform.arn
   task_role_arn            = aws_iam_role.iam_role_ecs_terraform.arn
   container_definitions    = jsonencode([local.container_definition])
-  
+
 }
 
 resource "aws_ecs_service" "this" {
- #depends_on             = [aws_iam_role.task_role]
+  #depends_on             = [aws_iam_role.task_role]
   name                   = var.service_name
   cluster                = data.aws_ecs_cluster.this.arn
   task_definition        = aws_ecs_task_definition.this.arn
