@@ -126,7 +126,7 @@ variable "env" {
   default     = ""
 }
 
-variable "security_group" {
+/*variable "security_group" {
   type = string
   description = "security group"
 }
@@ -134,7 +134,7 @@ variable "security_group" {
 variable "iam_role" {
   type = string
   description = "Iam role"
-}
+}*/
 
 /*variable "Pull_image_dlake" {
   type = string
