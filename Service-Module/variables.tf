@@ -19,12 +19,13 @@ variable "vpc_id" {
 
 variable "db" {
   description = "Service name"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
+
 variable "account_id" {
-  description = "Select the account we will be working on"
-  type = string
+  type        = string
+  description = "AWS Account id"
 }
 #########################################
 ####### Autoscaling parameters ##########
