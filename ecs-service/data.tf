@@ -26,12 +26,12 @@ data "aws_iam_policy" "pite-dldeb-pullfromecr" {
   arn = "arn:aws:iam::aws:policy/pite-dldeb-${var.env}-pullfromecr"
 }
 data "aws_secretsmanager_secret" "masterDB" {
-    arn = data.aws_secretsmanager_secret.masterDB.arn
+    value = "pite-dldeb-${var.db}-${var.env}-admin"
   
 }
 
 data "aws_secretsmanager_secret_version" "creds" {
-    secret_id = data.aws_secretsmanager_secret.masterDB.id
+    secret_id = "pite-dldeb-${var.db}-${var.env}-admin"
 }
 
 data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
