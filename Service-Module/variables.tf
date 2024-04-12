@@ -154,3 +154,8 @@ variable "pullfromecr" {
   description = "value"
   default = "pite-dldeb-${var.env}-pullfromecr"
 }
+
+variable "ecr_repository" {
+  type = string
+  description = "Ecr repository"
+}
