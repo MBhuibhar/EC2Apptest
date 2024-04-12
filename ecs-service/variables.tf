@@ -1,18 +1,21 @@
 ####################################
 ##### Control Variables ############
 ####################################
+
 variable "account_name" {
   type        = string
   description = "Name of the account we want to deploy to"
 }
 
-variable "aws_account_id" {
+variable "account_selector" {
   description = "Select the account we will be working on"
   default = {
-    "dev-datalake-dev"   : "609258630391"
-    "dev-datalake-stage" : "609258630391"
+    "daf-dev-digitaldatalake-dev" : "904626469165"
+    "daf-dev-digitaldatalake-stage" : "904626469165"
   }
 }
+
+variable "account_id" {}
 
 variable "vpc_id" {
   type        = string
@@ -31,6 +34,7 @@ variable "fargate_resources" {
       cpu    = "4096"
       memory = "30720"
     }
+
   }
 }
 
@@ -43,32 +47,32 @@ variable "div" {
 
 variable "dept" {
   description = "Name of Departmnet for tagging "
-  default     = "53"
+  default     = "53200"
 }
 
 variable "contact" {
   description = "Name of contact for tagging "
-  default     = ""
+  default     = "daftruckseindhoven-glbamsdata@daftrucks.com"
 }
 
 variable "application" {
   description = "Name of application for tagging "
-  default     = "ecs"
+  default     = "datalake debezium ecs"
 }
 
 variable "initiator" {
   description = "Name of initiator for tagging "
-  default     = ""
+  default     = "akshay.kalambe@daftrucks.com"
 }
 
 variable "domain" {
   description = "Name of domain for tagging "
-  default     = ""
+  default     = "paccar it europe"
 }
 
 variable "billingcode" {
   description = "Name of billingcode for tagging "
-  default     = "53"
+  default     = "53200"
 }
 
 variable "eeano" {
@@ -85,5 +89,3 @@ variable "aws_region" {}
 variable "service_name" {}
 
 variable "ecr_image" {}
-
-variable "assume_role" {}
