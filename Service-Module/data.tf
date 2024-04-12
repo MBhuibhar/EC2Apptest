@@ -86,11 +86,25 @@ data "external" "ecr_latest_image" {
 }
 
 data "aws_security_group" "ecs_sg" {
-  name  = "daf-dev-digitaldatalake-${var.env}-generic-sg"
+  name = "daf-dev-digitaldatalake-${var.env}-generic-sg"
 }
 
 data "aws_ecr_repository" "ecr_repo" {
-  name = "pite-dldeb-${var.env}-${var.db}-ecr-repo"
+  name           = "${var.account_id}.dkr.ecr.eu-central-1.amazonaws.com/pite-dldeb-${var.env}-${var.db}-ecr-repo"
+  #repository_url = data.aws_ecr_repository.ecr_repo
+}
+
+data "aws_iam_role" "iam_role_ecs_terraform" {
+  name = "pite-dldeb-${var.env}-ecs-iam-role"
+}
+data "aws_iam_policy" "pite-dldeb-Pull_image_dlake" {
+  name = "pite-dldeb-${var.env}-Pull_image_dlake"
+}
+data "aws_iam_policy" "pite-dldeb-infra-setup-policy" {
+  name = "pite-dldeb-${var.env}-infra-setup-policy"
+}
+data "aws_iam_policy" "pite-dldeb-pullfromecr" {
+  name = "pite-dldeb-${var.env}-pullfromecr"
 }
 
 data "aws_iam_policy" "SecretsManagerReadWrite" {
@@ -107,16 +121,4 @@ data "aws_iam_policy" "CloudWatchAgentServerPolicy" {
 
 data "aws_iam_policy" "AmazonSNSFullAccess" {
   arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
-}
-data "aws_iam_role" "iam_role_ecs_terraform" {
-  name = "pite-dldeb-${var.env}-ecs-iam-role"
-}
-data "aws_iam_policy" "pite-dldeb-Pull_image_dlake" {
-  name = "pite-dldeb-${var.env}-Pull_image_dlake"
-}
-data "aws_iam_policy" "pite-dldeb-infra-setup-policy" {
-  name = "pite-dldeb-${var.env}-infra-setup-policy"
-}
-data "aws_iam_policy" "pite-dldeb-pullfromecr" {
-  name = "pite-dldeb-${var.env}-pullfromecr"
 }
