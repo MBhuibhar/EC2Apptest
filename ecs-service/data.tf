@@ -14,7 +14,7 @@ data "aws_iam_policy" "AmazonSNSFullAccess" {
   arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
 }
 data "aws_iam_role" "iam_role_ecs_terraform" {
-  arn = "arn:aws:iam::aws:role/pite-dldeb-${var.env}-ecs-iam-role"
+  name = "arn:aws:iam::aws:role/pite-dldeb-${var.env}-ecs-iam-role"
 }
 data "aws_iam_policy" "pite-dldeb-Pull_image_dlake" {
   arn = "arn:aws:iam::aws:policy/pite-dldeb-${var.env}-Pull_image_dlake"
@@ -26,7 +26,7 @@ data "aws_iam_policy" "pite-dldeb-pullfromecr" {
   arn = "arn:aws:iam::aws:policy/pite-dldeb-${var.env}-pullfromecr"
 }
 data "aws_secretsmanager_secret" "masterDB" {
-    value = "pite-dldeb-${var.db}-${var.env}-admin"
+    name = "pite-dldeb-${var.service_name}-${var.env}-admin"
   
 }
 
