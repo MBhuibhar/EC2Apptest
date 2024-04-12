@@ -17,13 +17,13 @@ data "aws_iam_role" "iam_role_ecs_terraform" {
   name = "pite-dldeb-${var.env}-ecs-iam-role"
 }
 data "aws_iam_policy" "pite-dldeb-Pull_image_dlake" {
-  name = "pite-dldeb-${var.env}-Pull_image_dlake"
+  arn = "arn:aws:iam::aws:policy/pite-dldeb-${var.env}-Pull_image_dlake"
 }
 data "aws_iam_policy" "pite-dldeb-infra-setup-policy" {
-  name = "pite-dldeb-${var.env}-infra-setup-policy"
+  arn = "arn:aws:iam::aws:policy/pite-dldeb-${var.env}-infra-setup-policy"
 }
 data "aws_iam_policy" "pite-dldeb-pullfromecr" {
-  name = "pite-dldeb-${var.env}-pullfromecr"
+  arn = "arn:aws:iam::aws:policy/pite-dldeb-${var.env}-pullfromecr"
 }
 data "aws_secretsmanager_secret" "masterDB" {
     arn = data.aws_secretsmanager_secret.masterDB.arn
