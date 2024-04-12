@@ -8,10 +8,10 @@ module "pite-dldeb_services_SQL_service" {
   ecs_cluster_name           = "${var.account_name}-${var.env}-cluster"
   vpc_id                     = var.vpc_id
   container_port             = 8083
-  cpu                        = var.pite-dldeb_services_SQL_all_service.cpu
-  memory                     = var.pite-dldeb_services_SQL_all_service.memory
-  task_role_policy           = aws_iam_role.iam_role_ecs_terraform.ecs_role.name
-  task_execution_role_policy = aws_iam_role.iam_role_ecs_terraform.ecs_role.name
+  cpu                        = var.fargate_resource.pite-dldeb_services_SQL_all_service.cpu
+  memory                     = var.fargate_resource.pite-dldeb_services_SQL_all_service.memory
+  task_role_policy           = data.aws_iam_role.iam_role_ecs_terraform.ecs_role.name
+  task_execution_role_policy = data.aws_iam_role.iam_role_ecs_terraform.ecs_role.name
   container_traffic_protocol = "tcp"
   account_id                 = ""
 
