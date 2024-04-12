@@ -134,28 +134,20 @@ variable "security_group" {
 variable "iam_role" {
   type = string
   description = "Iam role"
-  default = "pite-dldeb-${var.env}-ecs-iam-role"
 }
 
-variable "Pull_image_dlake" {
+/*variable "Pull_image_dlake" {
   type = string
   description = "value"
-  default = "pite-dldeb-${var.env}-Pull_image_dlake"
 }
 
 variable "infra-setup-policy" {
   type = string
   description = "value"
-  default = "pite-dldeb-${var.env}-infra-setup-policy"
 }
 
 variable "pullfromecr" {
   type = string
   description = "value"
   default = "pite-dldeb-${var.env}-pullfromecr"
-}
-
-variable "ecr_repository" {
-  type = string
-  description = "Ecr repository"
-}
+}*/
