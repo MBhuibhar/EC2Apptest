@@ -73,6 +73,10 @@ data "aws_subnets" "private_subnets" {
   }
 }
 
+data "aws_ecr_repository" "ecr_repo" {
+  name = var.ecr_repository
+}
+
 data "aws_ecs_cluster" "this" {
   cluster_name = var.ecs_cluster_name
 }
