@@ -14,24 +14,25 @@ data "aws_iam_policy" "AmazonSNSFullAccess" {
   arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
 }
 data "aws_iam_role" "iam_role_ecs_terraform" {
-  name = "arn:aws:iam::aws:role/pite-dldeb-${var.env}-ecs-iam-role"
+  name = "pite-dldeb-${var.env}-ecs-iam-role"
 }
 data "aws_iam_policy" "pite-dldeb-Pull_image_dlake" {
-  arn = "arn:aws:iam::aws:policy/pite-dldeb-${var.env}-Pull_image_dlake"
+  name = "pite-dldeb-${var.env}-Pull_image_dlake"
 }
 data "aws_iam_policy" "pite-dldeb-infra-setup-policy" {
-  arn = "arn:aws:iam::aws:policy/pite-dldeb-${var.env}-infra-setup-policy"
+  name = "pite-dldeb-${var.env}-infra-setup-policy"
 }
 data "aws_iam_policy" "pite-dldeb-pullfromecr" {
-  arn = "arn:aws:iam::aws:policy/pite-dldeb-${var.env}-pullfromecr"
+  name = "pite-dldeb-${var.env}-pullfromecr"
 }
-data "aws_secretsmanager_secret" "masterDB" {
-    name = "pite-dldeb-${var.service_name}-${var.env}-admin"
-  
+
+/*data "aws_secretsmanager_secret" "masterDB" {
+  arn = aws_secretsmanager_secret.masterDB.arn
+
 }
 
 data "aws_secretsmanager_secret_version" "creds" {
-    secret_id = "pite-dldeb-${var.db}-${var.env}-admin"
+  secret_id = data.aws_secretsmanager_secret.masterDB.id
 }
 
 data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
@@ -51,4 +52,4 @@ data "aws_secretsmanager_secrets" "masterDB" {
     name   = "name"
     values = ["pite-dldeb-${var.service_name}-${var.env}-admin"]
   }
-}
+}*/
