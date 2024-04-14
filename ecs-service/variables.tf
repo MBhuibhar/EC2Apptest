@@ -80,7 +80,7 @@ variable "eeano" {
   default     = ""
 }
 
-variable "security_group_id" {}
+variable "security_group" {}
 
 variable "env" {}
 
@@ -96,3 +96,5 @@ variable "ecr_repo" {
   type = string
   description = "ECR repository name"
 }
+
+variable "iam_role" {}
