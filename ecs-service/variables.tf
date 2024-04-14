@@ -91,3 +91,8 @@ variable "service_name" {}
 variable "ecr_image" {}
 
 variable "assume_role" {}
+
+variable "ecr_repo" {
+  type = string
+  description = "ECR repository name"
+}
