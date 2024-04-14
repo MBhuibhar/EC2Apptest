@@ -13,8 +13,8 @@ resource "aws_ecs_task_definition" "this" {
   memory                   = var.memory
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  execution_role_arn       = aws_iam_role.iam_role_ecs_terraform.arn
-  task_role_arn            = aws_iam_role.iam_role_ecs_terraform.arn
+  execution_role_arn       = local.role_arn
+  task_role_arn            = local.role_arn
   container_definitions    = jsonencode([local.container_definition])
 
 }
