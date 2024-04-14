@@ -13,7 +13,7 @@ data "aws_iam_policy" "CloudWatchAgentServerPolicy" {
 data "aws_iam_policy" "AmazonSNSFullAccess" {
   arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
 }
-data "aws_iam_role" "iam_role_ecs_terraform" {
+/*data "aws_iam_role" "iam_role_ecs_terraform" {
   name = "pite-dldeb-${var.env}-ecs-iam-role"
 }
 data "aws_iam_policy" "pite-dldeb-Pull_image_dlake" {
@@ -24,7 +24,7 @@ data "aws_iam_policy" "pite-dldeb-infra-setup-policy" {
 }
 data "aws_iam_policy" "pite-dldeb-pullfromecr" {
   name = "pite-dldeb-${var.env}-pullfromecr"
-}
+}*/
 
 /*data "aws_secretsmanager_secret" "masterDB" {
   arn = aws_secretsmanager_secret.masterDB.arn
