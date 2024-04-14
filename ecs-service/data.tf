@@ -24,7 +24,7 @@ data "aws_iam_policy" "pite-dldeb-infra-setup-policy" {
 }
 data "aws_iam_policy" "pite-dldeb-pullfromecr" {
   name = "pite-dldeb-${var.env}-pullfromecr"
-}*/
+}
 
 /*data "aws_secretsmanager_secret" "masterDB" {
   arn = aws_secretsmanager_secret.masterDB.arn
