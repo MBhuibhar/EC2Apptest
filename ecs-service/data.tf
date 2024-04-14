@@ -13,8 +13,8 @@ data "aws_iam_policy" "CloudWatchAgentServerPolicy" {
 data "aws_iam_policy" "AmazonSNSFullAccess" {
   arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
 }
-/*data "aws_iam_role" "iam_role_ecs_terraform" {
-  name = "pite-dldeb-${var.env}-ecs-iam-role"
+data "aws_iam_role" "iam_role_ecs_terraform" {
+  name = var.iam_role
 }
 data "aws_iam_policy" "pite-dldeb-Pull_image_dlake" {
   name = "pite-dldeb-${var.env}-Pull_image_dlake"
