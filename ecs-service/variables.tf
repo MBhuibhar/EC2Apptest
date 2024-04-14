@@ -98,3 +98,4 @@ variable "ecr_repo" {
 }
 
 variable "iam_role" {}
+variable "db" {}
