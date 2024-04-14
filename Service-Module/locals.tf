@@ -27,7 +27,7 @@ locals {
   private_subnet_ids = [for k, v in data.aws_subnets.private_subnets : length(v.ids) > 0 ? v.ids[0] : ""]
 }
 locals {
-  role_name = "pite-dldeb-${var.env}-ecs-iam-role"
+  role_arn = "arn:aws:iam::aws:role/pite-dldeb-${var.env}-ecs-iam-role"
 }
 /*locals {
   env = "dev"
