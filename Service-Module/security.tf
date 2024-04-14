@@ -71,9 +71,9 @@ data "aws_iam_policy" "AmazonSNSFullAccess" {
       }
     ]
   })
-}
+}*/
 
-resource "aws_iam_policy" "pite-dldeb-infra-setup-policy" {
+/*resource "aws_iam_policy" "pite-dldeb-infra-setup-policy" {
   name = "pite-dldeb-${var.env}-infra-setup-policy"
 
   policy = jsonencode({
@@ -148,9 +148,9 @@ resource "aws_iam_policy" "pite-dldeb-infra-setup-policy" {
     ],
     "Version" : "2012-10-17"
   })
-}
+}*/
 
-resource "aws_iam_policy" "pite-dldeb-pullfromecr" {
+/*resource "aws_iam_policy" "pite-dldeb-pullfromecr" {
   name = "pite-dldeb-${var.env}-pullfromecr"
 
   policy = jsonencode({
