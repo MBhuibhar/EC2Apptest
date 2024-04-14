@@ -126,7 +126,7 @@ variable "env" {
   default     = ""
 }
 
-/*variable "security_group" {
+variable "security_group" {
   type = string
   description = "security group"
 }
@@ -134,20 +134,10 @@ variable "env" {
 variable "iam_role" {
   type = string
   description = "Iam role"
-}*/
-
-/*variable "Pull_image_dlake" {
-  type = string
-  description = "value"
+  default = "arn:aws:iam::aws:role/pite-dldeb-${var.env}-ecs-iam-role"
 }
-
-variable "infra-setup-policy" {
+variable "ecr_repo" {
   type = string
-  description = "value"
+  description = "ECR repository name"
+  
 }
-
-variable "pullfromecr" {
-  type = string
-  description = "value"
-  default = "pite-dldeb-${var.env}-pullfromecr"
-}*/
