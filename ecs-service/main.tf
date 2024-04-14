@@ -13,7 +13,10 @@ module "pite-dldeb_services_SQL_service" {
   task_role_policy           = data.aws_iam_role.iam_role_ecs_terraform.name
   task_execution_role_policy = data.aws_iam_role.iam_role_ecs_terraform.name
   container_traffic_protocol = "tcp"
-  account_id                 = ""
+  account_id                 = "var.account_id"
+  ecr_repo                   = "var.ecr_repo"
+  iam_role                   = "var.iam_role"
+  security_group             = "var.security_group"
 
   container_environment_variables = [
     {
@@ -215,6 +218,10 @@ module "pite-dldeb_services_MYSQL_service" {
   task_execution_role_policy = data.aws_iam_role.iam_role_ecs_terraform.name
   container_traffic_protocol = "tcp"
   account_id                 = ""
+  account_id                 = "var.account_id"
+  ecr_repo                   = "var.ecr_repo"
+  iam_role                   = "var.iam_role"
+  security_group             = "var.security_group"
 
   container_environment_variables = [
     {
