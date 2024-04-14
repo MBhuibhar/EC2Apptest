@@ -80,7 +80,7 @@ variable "eeano" {
   default     = ""
 }
 
-variable "security_group" {}
+variable "security_group_id" {}
 
 variable "env" {}
 
@@ -88,14 +88,6 @@ variable "aws_region" {}
 
 variable "service_name" {}
 
-variable "ecr_image" {}
+variable "ecr_repo" {}
 
 variable "assume_role" {}
-
-variable "ecr_repo" {
-  type = string
-  description = "ECR repository name"
-}
-
-variable "iam_role" {}
-variable "db" {}
