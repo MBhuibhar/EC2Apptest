@@ -73,10 +73,6 @@ data "aws_subnets" "private_subnets" {
   }
 }
 
-data "aws_ecr_repository" "ecr_repo" {
-  name = var.ecr_repository
-}
-
 data "aws_ecs_cluster" "this" {
   cluster_name = var.ecs_cluster_name
 }
@@ -90,22 +86,13 @@ data "external" "ecr_latest_image" {
 }
 
 data "aws_security_group" "ecs_sg" {
-  name = var.security_group
+  name        = var.security_group
+  vpc_id      = var.vpc_id
 }
 
 data "aws_iam_role" "iam_role_ecs_terraform" {
   name = var.iam_role
 }
-data "aws_iam_policy" "pite-dldeb-Pull_image_dlake" {
-  name = var.Pull_image_dlake
-}
-data "aws_iam_policy" "pite-dldeb-infra-setup-policy" {
-  name = var.infra-setup-policy
-}
-data "aws_iam_policy" "pite-dldeb-pullfromecr" {
-  name = var.pullfromecr
-}
-
 data "aws_iam_policy" "SecretsManagerReadWrite" {
   arn = "arn:aws:iam::aws:policy/SecretsManagerReadWrite"
 }
