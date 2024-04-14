@@ -134,7 +134,6 @@ variable "security_group" {
 variable "iam_role" {
   type = string
   description = "Iam role"
-  default = "arn:aws:iam::aws:role/pite-dldeb-${var.env}-ecs-iam-role"
 }
 variable "ecr_repo" {
   type = string
