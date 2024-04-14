@@ -110,6 +110,4 @@ data "aws_iam_policy" "AmazonSNSFullAccess" {
 }
 data "aws_ecr_repository" "ecr_repo" {
   name = var.ecr_repo
-  repository_url = "aws_account_id.dkr.ecr.region.amazonaws.com/pite.dldeb-${var.env}-${var.db}-ecr-repo"
-  
 }
