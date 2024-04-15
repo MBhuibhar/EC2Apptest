@@ -1,6 +1,6 @@
 locals {
   ecr_repository_name = data.aws_ecr_repository.ecr_image
-  ecr_latest_image    = data.aws_ecr_repository.ecr_repo.name == "" ? "latest" : data.aws_ecr_repository.ecr_repo.name
+  ecr_latest_image    = data.aws_ecr_repository.ecr_image.name == "" ? "latest" : data.aws_ecr_repository.ecr_image.name
   container_definition = {
     name        = var.service_name
     image       = var.ecr_image == "" ? "${local.ecr_repository_name.repository_url}:${local.ecr_latest_image}" : var.ecr_image
