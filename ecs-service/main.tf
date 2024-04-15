@@ -213,7 +213,7 @@ module "pite-dldeb_services_SQL_service" {
 module "pite-dldeb_services_MYSQL_service" {
   source                     = "../Service-Module/"
   service_name               = "${local.global_name}-dldeb-mysql-service"
-  ecs_cluster_name           = "pite-dldeb-${var.env}-ecs-cluster"
+  ecs_cluster_name           = "arn:aws:ecs:eu-central-1:${var.account_id}:cluster/pite-dldeb-${var.env}-ecs-cluster"
   vpc_id                     = var.vpc_id
   container_port             = 8083
   cpu                        = var.fargate_resources.pite-dldeb_services_MYSQL_all_service.cpu
