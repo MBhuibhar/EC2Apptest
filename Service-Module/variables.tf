@@ -134,4 +134,5 @@ variable "iam_role" {
 variable "account_id" {
   type        = string
   description = "AWS Account id"
+  default     = ""
 }
