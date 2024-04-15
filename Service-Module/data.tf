@@ -86,7 +86,7 @@ data "external" "ecr_latest_image" {
 }
 
 data "aws_security_group" "ecs_sg" {
-  name        = var.security_group.name
+  name        = var.security_group.id
   vpc_id      = var.vpc_id
 }
 
