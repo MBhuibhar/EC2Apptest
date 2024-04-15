@@ -5,7 +5,7 @@
 #Tasks
 #IAM Roles
 resource "aws_ecr_repository" "ecr_name" {
-  name         = "dldeb-${var.env}-${var.db}-ecr-repo"
+  name         = "pite-dldeb-${var.env}-${var.db}-ecr-repo"
   force_delete = true
 
   image_scanning_configuration {
