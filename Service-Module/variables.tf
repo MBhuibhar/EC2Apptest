@@ -23,10 +23,6 @@ variable "db" {
   default     = ""
 }
 
-variable "account_id" {
-  type        = string
-  description = "AWS Account id"
-}
 #########################################
 ####### Autoscaling parameters ##########
 #########################################
@@ -134,4 +130,8 @@ variable "security_group" {
 variable "iam_role" {
   type = string
   description = "Iam role"
+}
+variable "account_id" {
+  type        = string
+  description = "AWS Account id"
 }
