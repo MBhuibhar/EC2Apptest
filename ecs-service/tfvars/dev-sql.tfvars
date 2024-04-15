@@ -14,6 +14,7 @@ aws_region            = "eu-west-1"                     #"eu-central-1"
 ecr_image             = "609258630391.dkr.ecr.eu-west-1.amazonaws.com/pite-dldeb-dev-sql-ecr-repo"
 assume_role           = ""
 iam_role              = ""
+ecs_cluster_name      = "arn:aws:ecs:eu-central-1:${var.account_id}:cluster/pite-dldeb-${var.env}-ecs-cluster"
 fargate_resources    = {
     pite-dldeb_services_SQL_all_service = {
       cpu    = "4096"
