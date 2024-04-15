@@ -32,6 +32,6 @@ resource "aws_ecs_service" "this" {
 
   network_configuration {
     subnets         = compact(local.private_subnet_ids)
-    security_groups = [data.aws_security_group.ecs_sg]
+    security_groups = [local.security_group_id]
   }
 }
