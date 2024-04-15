@@ -35,6 +35,9 @@ locals {
 locals {
   aws_ecr_repository = var.ecr_image
 }
+locals {
+   aws_ecs_cluster_arn = arn:aws:ecs:eu-central-1:${var.account_id}:cluster/pite-dldeb-${var.env}-ecs-cluster
+}
   
 /*locals {
   env = "dev"
