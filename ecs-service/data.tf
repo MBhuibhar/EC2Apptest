@@ -47,6 +47,11 @@ data "aws_iam_policy_document" "ecs_module_managed_execution_role_policy" {
   }
 }
 
+data "aws_security_group" "ecs_sg" {
+  name        = var.security_group
+  vpc_id      = var.vpc_id
+}
+
 /*data "aws_iam_role" "iam_role_ecs_terraform" {
   name = var.iam_role
 }
