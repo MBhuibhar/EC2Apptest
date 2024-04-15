@@ -1,6 +1,6 @@
 locals {
-  ecr_repository_name = data.aws_ecr_repository.ecr_image
-  ecr_latest_image    = data.aws_ecr_repository.ecr_image.name == "" ? "latest" : data.aws_ecr_repository.ecr_image.name
+  ecr_repository_name = local.aws_ecr_repository
+  ecr_latest_image    = local.aws_ecr_repository.name == "" ? "latest" : local.aws_ecr_repository.name
   container_definition = {
     name        = var.service_name
     image       = var.ecr_image == "" ? "${local.ecr_repository_name.repository_url}:${local.ecr_latest_image}" : var.ecr_image
@@ -13,7 +13,7 @@ locals {
       logDriver = "awslogs"
       options = {
         awslogs-group         = aws_cloudwatch_log_group.this.name
-        awslogs-region        = "eu-central-1"
+        awslogs-region        = "eu-west-1"  #eu-central-1
         awslogs-stream-prefix = "ecs"
       }
     }
@@ -32,6 +32,10 @@ locals {
 locals {
   security_group_id = var.security_group
 }
+locals {
+  aws_ecr_repository = var.ecr_image
+}
+  
 /*locals {
   env = "dev"
   dev = {             
