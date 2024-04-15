@@ -210,7 +210,7 @@ module "pite-dldeb_services_SQL_service" {
 
 }
 
-module "pite-dldeb_services_MYSQL_service" {
+/*module "pite-dldeb_services_MYSQL_service" {
   source                     = "../Service-Module/"
   service_name               = "${local.global_name}-dldeb-mysql-service"
   ecs_cluster_name           = "arn:aws:ecs:eu-central-1:${var.account_id}:cluster/pite-dldeb-${var.env}-ecs-cluster"
@@ -264,4 +264,4 @@ module "pite-dldeb_services_MYSQL_service" {
     timeout     = 5
   })
 
-}
+}*/
