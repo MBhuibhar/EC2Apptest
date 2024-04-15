@@ -1,5 +1,5 @@
 module "iam_assumable_role" {
-    source = "../Service-Module/security.tf"
+    source = "../Service-Module/"
     output "iam_role_ecs" {
         value = module.service-Module.iam_role
     }
