@@ -93,21 +93,7 @@ data "aws_security_group" "ecs_sg" {
 /*data "aws_iam_role" "iam_role_ecs_terraform" {
   name = var.iam_role
 }*/
-data "aws_iam_policy" "SecretsManagerReadWrite" {
-  arn = "arn:aws:iam::aws:policy/SecretsManagerReadWrite"
-}
 
-data "aws_iam_policy" "AmazonSQSFullAccess" {
-  arn = "arn:aws:iam::aws:policy/AmazonSQSFullAccess"
-}
-
-data "aws_iam_policy" "CloudWatchAgentServerPolicy" {
-  arn = "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
-}
-
-data "aws_iam_policy" "AmazonSNSFullAccess" {
-  arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
-}
 data "aws_ecr_repository" "ecr_repo" {
   name = var.ecr_repo
 }
