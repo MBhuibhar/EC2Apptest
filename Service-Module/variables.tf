@@ -7,10 +7,10 @@ variable "service_name" {
   description = "Name for the service components in the format required by the tagset, the name will be trimed to 32 characters"
 }
 
-/*variable "ecs_cluster_name" {
+variable "ecs_cluster_name" {
   type        = string
   description = "Name of the ECS cluster that will be used to deploy the service"
-}*/
+}
 
 variable "vpc_id" {
   type        = string
