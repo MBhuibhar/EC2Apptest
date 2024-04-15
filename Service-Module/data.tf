@@ -73,9 +73,9 @@ data "aws_subnets" "private_subnets" {
   }
 }
 
-data "aws_ecs_cluster" "this" {
+/*data "aws_ecs_cluster" "this" {
   cluster_name = var.ecs_cluster_name
-}
+}*/
 
 data "external" "ecr_latest_image" {
   program = ["bash", "${path.module}/get-ecr-tag.sh"]
