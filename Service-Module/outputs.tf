@@ -17,3 +17,16 @@ output "ecr_repository_arn" {
   value       = var.ecr_image == "" ? local.ecr_repository_name.arn : ""
   description = "If managed, the ARN of the ECR repository"
 }
+output "iam_role" {
+  value = aws_iam_role.iam_role_ecs_terraform.name
+}
+
+output "Pull_image_dlake" {
+  value = aws_iam_policy.pite-dldeb-Pull_image_dlake.arn
+}
+output "infra-setup-policy" {
+  value = aws_iam_policy.pite-dldeb-infra-setup-policy.arn
+}
+output "pullfromecr" {
+  value = aws_iam_policy.pite-dldeb-pullfromecr.arn
+}
