@@ -1,4 +1,53 @@
-data "aws_iam_role" "iam_role_ecs_terraform" {
+data "aws_iam_policy_document" "ecs_assume_policy" {
+  statement {
+    effect = "Allow"
+    actions = [
+      "sts:AssumeRole"
+    ]
+    principals {
+      type        = "Service"
+      identifiers = ["ecs-tasks.amazonaws.com"]
+    }
+  }
+}
+
+data "aws_iam_policy_document" "ecs_module_managed_execution_role_policy" {
+  statement {
+    effect = "Allow"
+    actions = [
+      "logs:CreateLogStream",
+      "logs:PutLogEvents"
+    ]
+    resources = [
+      "${aws_cloudwatch_log_group.this.arn}*",
+    ]
+  }
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "ecr:GetAuthorizationToken"
+    ]
+    resources = ["*"]
+  }
+
+  dynamic "statement" {
+    for_each = var.ecr_image == "" ? [1] : []
+    content {
+      effect = "Allow"
+      actions = [
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:BatchGetImage",
+        "ecr:GetDownloadUrlForLayer"
+      ]
+      resources = [
+        aws_ecr_repository.this[0].arn
+      ]
+    }
+  }
+}
+
+/*data "aws_iam_role" "iam_role_ecs_terraform" {
   name = var.iam_role
 }
 data "aws_iam_policy" "pite-dldeb-Pull_image_dlake" {
@@ -9,7 +58,7 @@ data "aws_iam_policy" "pite-dldeb-infra-setup-policy" {
 }
 data "aws_iam_policy" "pite-dldeb-pullfromecr" {
   name = "arn:aws:iam::aws:policy/pite-dldeb-${var.env}-pullfromecr"
-}
+}*/
 
 /*data "aws_secretsmanager_secret" "masterDB" {
   arn = aws_secretsmanager_secret.masterDB.arn
