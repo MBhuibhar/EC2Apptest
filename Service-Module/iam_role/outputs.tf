@@ -1,5 +1,5 @@
 output "iam_role_id" {
-  value = aws_iam_role.iam_role_ecs_terraform.name.id
+  value = aws_iam_role.iam_role_ecs_terraform.name
 }
 
 output "Pull_image_dlake" {
