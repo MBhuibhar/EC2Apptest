@@ -135,7 +135,7 @@ variable "iam_role" {
   type = string
   description = "Iam role"
 }
-variable "ecr_repo" {
+variable "ecr_iamge" {
   type = string
   description = "ECR repository name"
   
