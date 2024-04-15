@@ -1,4 +1,4 @@
-/*data "aws_iam_policy_document" "ecs_assume_policy" {
+data "aws_iam_policy_document" "ecs_assume_policy" {
   statement {
     effect = "Allow"
     actions = [
@@ -45,7 +45,7 @@ data "aws_iam_policy_document" "ecs_module_managed_execution_role_policy" {
       ]
     }
   }
-}*/
+}
 
 data "aws_availability_zones" "available_az" {
   state = "available"
