@@ -10,8 +10,8 @@ module "pite-dldeb_services_SQL_service" {
   container_port             = 8083
   cpu                        = var.fargate_resources.pite-dldeb_services_SQL_all_service.cpu
   memory                     = var.fargate_resources.pite-dldeb_services_SQL_all_service.memory
-  task_role_policy           = aws_iam_role.iam_role_ecs_terraform
-  task_execution_role_policy = aws_iam_role.iam_role_ecs_terraform
+  task_role_policy           = module.iam_role_policy
+  task_execution_role_policy = module.iam_role_policy
   container_traffic_protocol = "tcp"
   account_id                 = "var.account_id"
   ecr_repo                   = "var.ecr_repo"
