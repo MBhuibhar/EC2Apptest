@@ -2,11 +2,6 @@
 ##### Control Variables ############
 ####################################
 
-/*variable "account_name" {
-  type        = string
-  description = "Name of the account we want to deploy to"
-}*/
-
 variable "account_selector" {
   description = "Select the account we will be working on"
   default = {
