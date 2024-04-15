@@ -1,7 +1,7 @@
 env                   = "dev"
 service_name          = "sql"
 account_id            = "609258630391"
-account_name          = "daf-dev-digitaldatalake-dev"
+#account_name          = "daf-dev-digitaldatalake-dev"
 vpc_id                = "vpc-bc2cd4c5"                  #"vpc-0be9984772fa33a6b"
 #subnet1              = "subnet-b7b8bdff"               #"subnet-09dacc0e93e6e65e8"
 #subnet2              = "subnet-e4457082"               #"subnet-0b8d8a23586b6560e"
