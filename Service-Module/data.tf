@@ -94,6 +94,6 @@ data "external" "ecr_latest_image" {
   name = var.iam_role
 }*/
 
-data "aws_ecr_repository" "ecr_image" {
+/*data "aws_ecr_repository" "ecr_image" {
   name = var.ecr_image
-}
+}*/
