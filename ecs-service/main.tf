@@ -17,7 +17,7 @@ module "pite-dldeb_services_SQL_service" {
   task_role_policy           = data.aws_iam_policy_document.ecs_assume_policy.json
   task_execution_role_policy = data.aws_iam_policy_document.ecs_module_managed_execution_role_policy.json
   container_traffic_protocol = "tcp"
-  #account_id                 = "var.account_id"
+  account_id                 = "var.account_id"
   ecr_image                  = "var.ecr_image"
   iam_role                   = "var.iam_role"
   security_group             = "var.security_group"
