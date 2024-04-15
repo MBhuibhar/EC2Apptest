@@ -10,8 +10,8 @@ module "pite-dldeb_services_SQL_service" {
   container_port             = 8083
   cpu                        = var.fargate_resources.pite-dldeb_services_SQL_all_service.cpu
   memory                     = var.fargate_resources.pite-dldeb_services_SQL_all_service.memory
-  task_role_policy           = module.service-Module.iam_role
-  task_execution_role_policy = module.service-Module.iam_role
+  task_role_policy           = module.service-Module.iam_assumable_role
+  task_execution_role_policy = module.service-Module.iam_assumable_role
   container_traffic_protocol = "tcp"
   account_id                 = "var.account_id"
   ecr_repo                   = "var.ecr_repo"
@@ -214,8 +214,8 @@ module "pite-dldeb_services_MYSQL_service" {
   container_port             = 8083
   cpu                        = var.fargate_resources.pite-dldeb_services_MYSQL_all_service.cpu
   memory                     = var.fargate_resources.pite-dldeb_services_MYSQL_all_service.memory
-  task_role_policy           = module.service-Module.iam_role
-  task_execution_role_policy = module.service-Module.iam_role
+  task_role_policy           = module.service-Module.iam_assumable_role
+  task_execution_role_policy = module.service-Module.iam_assumable_role
   container_traffic_protocol = "tcp"
   account_id                 = "var.account_id"
   ecr_repo                   = "var.ecr_repo"
