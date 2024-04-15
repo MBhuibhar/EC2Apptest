@@ -94,6 +94,6 @@ data "aws_security_group" "ecs_sg" {
   name = var.iam_role
 }*/
 
-data "aws_ecr_repository" "ecr_repo" {
-  name = var.ecr_repo
+data "aws_ecr_repository" "ecr_image" {
+  name = var.ecr_image
 }
