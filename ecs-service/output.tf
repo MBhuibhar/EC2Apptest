@@ -21,4 +21,7 @@ output "MYSQL_service_ecr_repo_arn" {
 /*output "ecs_role" {
   value = module.service-Module.aws_iam_role.iam_role_ecs_terraform.id
 }*/
+output "iam_role" {
+  value = ["${module.service-Module.aws_iam_role.iam_role_ecs_terraform.name}"]
+}
 
