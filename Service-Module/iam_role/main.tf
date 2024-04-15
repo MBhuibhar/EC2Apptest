@@ -191,35 +191,35 @@ resource "aws_iam_policy" "pite-dldeb-pullfromecr" {
 
 resource "aws_iam_role_policy_attachment" "SecretsManagerReadWrite" {
   role       = aws_iam_role.iam_role_ecs_terraform.name
-  policy_arn = data.aws_iam_policy.SecretsManagerReadWrite.arn
+  policy_arn = data.aws_iam_policy.SecretsManagerReadWrite
 }
 
 resource "aws_iam_role_policy_attachment" "AmazonSQSFullAccess" {
   role       = aws_iam_role.iam_role_ecs_terraform.name
-  policy_arn = data.aws_iam_policy.AmazonSQSFullAccess.arn
+  policy_arn = data.aws_iam_policy.AmazonSQSFullAccess
 }
 
 resource "aws_iam_role_policy_attachment" "CloudWatchAgentServerPolicy" {
   role       = aws_iam_role.iam_role_ecs_terraform.name
-  policy_arn = data.aws_iam_policy.CloudWatchAgentServerPolicy.arn
+  policy_arn = data.aws_iam_policy.CloudWatchAgentServerPolicy
 }
 
 resource "aws_iam_role_policy_attachment" "AmazonSNSFullAccess" {
   role       = aws_iam_role.iam_role_ecs_terraform.name
-  policy_arn = data.aws_iam_policy.AmazonSNSFullAccess.arn
+  policy_arn = data.aws_iam_policy.AmazonSNSFullAccess
 }
 
 resource "aws_iam_role_policy_attachment" "Pull_image_dlake" {
   role       = aws_iam_role.iam_role_ecs_terraform.name
-  policy_arn = aws_iam_policy.pite-dldeb-Pull_image_dlake.arn
+  policy_arn = aws_iam_policy.pite-dldeb-Pull_image_dlake
 }
 
 resource "aws_iam_role_policy_attachment" "pite-dldeb-infra-setup-policy_dlake" {
   role       = aws_iam_role.iam_role_ecs_terraform.name
-  policy_arn = aws_iam_policy.pite-dldeb-infra-setup-policy.arn
+  policy_arn = aws_iam_policy.pite-dldeb-infra-setup-policy
 }
 
 resource "aws_iam_role_policy_attachment" "pite-dldeb-pullfromecr_dlake" {
   role       = aws_iam_role.iam_role_ecs_terraform.name
-  policy_arn = aws_iam_policy.pite-dldeb-pullfromecr.arn
+  policy_arn = aws_iam_policy.pite-dldeb-pullfromecr
 }
