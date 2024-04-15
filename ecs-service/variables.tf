@@ -91,3 +91,5 @@ variable "service_name" {}
 variable "ecr_repo" {}
 
 variable "assume_role" {}
+
+variable "iam_role" {}
