@@ -125,11 +125,13 @@ variable "env" {
 variable "security_group" {
   type = string
   description = "security group"
+  default     = ""
 }
 
 variable "iam_role" {
   type = string
   description = "Iam role"
+  default     = ""
 }
 variable "account_id" {
   type        = string
