@@ -1,5 +1,5 @@
 resource "aws_iam_role" "task_execution_role" {
-  name               = "pite-dldeb.${var.env}-ecs-task-execution-role"
+  name               = "pite-dldeb-${var.env}-ecs-task-execution-role"
   assume_role_policy = data.aws_iam_policy_document.ecs_assume_policy.json
 
   inline_policy {
@@ -17,7 +17,7 @@ resource "aws_iam_role" "task_execution_role" {
 }
 
 resource "aws_iam_role" "task_role" {
-  name               = "pite-dldeb.${var.env}-ecs-task-role"
+  name               = "pite-dldeb-${var.env}-ecs-task-role"
   assume_role_policy = data.aws_iam_policy_document.ecs_assume_policy.json
 
   dynamic "inline_policy" {
