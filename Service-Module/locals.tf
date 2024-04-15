@@ -30,7 +30,7 @@ locals {
   role_arn = "arn:aws:iam::aws:role/pite-dldeb-${var.env}-ecs-iam-role"
 }
 {
-security_group = var.security_group
+security_group_id = var.security_group
 }
 /*locals {
   env = "dev"
