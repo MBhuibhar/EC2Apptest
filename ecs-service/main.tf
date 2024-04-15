@@ -2,7 +2,7 @@
   source = "../infra/terraform/"
 }*/
 resource "aws_cloudwatch_log_group" "ecs_logs" {
-  name              = "/aws/ecs/${var.service_name}-logs"
+  name              = "/aws/ecs/${var.service_name}-${var.env}-logs"
   retention_in_days = 180
 }
 
