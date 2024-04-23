@@ -17,3 +17,6 @@ output "ecr_repository_arn" {
   value       = var.ecr_image == "" ? local.ecr_repository_name.arn : ""
   description = "If managed, the ARN of the ECR repository"
 }
+output "ecr_repository_url" {
+   value      = data.aws_ecr_reposiroty.ecr_repo.repository_url
+}
