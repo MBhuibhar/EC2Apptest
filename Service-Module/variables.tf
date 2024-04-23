@@ -45,7 +45,7 @@ variable "max_service_replicas" {
 variable "ecr_image" {
   type        = string
   description = "Repository URL of the ECR image to deploy with tag, if not will be managed by the module"
-  default     = module.ecr_repository_name.ecr_repository_url
+  default     = ""
 }
 
 variable "container_environment_variables" {
