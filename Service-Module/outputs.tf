@@ -9,11 +9,11 @@ output "cloudwatch_log_group" {
 }
 
 output "ecr_repository_url" {
-  value       = var.ecr_image == "" ? "${local.ecr_repository_name.repository_url}:latest" : var.ecr_image
+  value       = local.aws_ecr_repository == "" ? "${local.ecr_repository_name.repository_url}:latest" : local.aws_ecr_repository #var.ecr_image
   description = "ECR repository URL, either the provided one or the managed one"
 }
 
 output "ecr_repository_arn" {
-  value       = var.ecr_image == "" ? local.ecr_repository_name.arn : ""
+  value       = local.aws_ecr_repository == "" ? local.ecr_repository_name.arn : ""   #var.ecr_image
   description = "If managed, the ARN of the ECR repository"
 }
