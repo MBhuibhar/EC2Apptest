@@ -47,7 +47,7 @@ data "aws_iam_policy_document" "ecs_module_managed_execution_role_policy" {
   }
 }
 
-data "aws_ecr_repository" "ecr_image" {
+data "aws_ecr_repository" "ecr_repo" {
   name = "${var.account_id}.dkr.ecr.eu-west-1.amazonaws.com/pite-dldeb-${var.env}-${var.service_name}-ecr-repo" 
 }
 /*data "aws_iam_role" "iam_role_ecs_terraform" {
