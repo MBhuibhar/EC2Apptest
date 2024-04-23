@@ -48,9 +48,7 @@ data "aws_iam_policy_document" "ecs_module_managed_execution_role_policy" {
 }
 
 data "aws_ecr_repository" "ecr_image" {
-   filter {
-     name = "name"
-     values = "pite-dldeb-${var.env}-${var.service_name}-ecr-repo" 
+  name = "pite-dldeb-${var.env}-${var.service_name}-ecr-repo" 
  }
 }
 /*data "aws_iam_role" "iam_role_ecs_terraform" {
