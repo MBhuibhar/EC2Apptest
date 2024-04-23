@@ -33,7 +33,7 @@ locals {
   security_group_id = var.security_group
 }
 locals {
-  aws_ecr_repository = data.aws_ecr_repository.ecr_repo.arn    #var.ecr_image
+  aws_ecr_repository = var.ecr_image
 }
 locals {
    aws_ecs_cluster_arn = var.ecs_cluster_name
