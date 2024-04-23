@@ -47,6 +47,9 @@ data "aws_iam_policy_document" "ecs_module_managed_execution_role_policy" {
   }
 }
 
+data "aws_ecr_repository" "ecr_image" {
+  name = var.ecr_image
+}
 /*data "aws_iam_role" "iam_role_ecs_terraform" {
   name = var.iam_role
 }
