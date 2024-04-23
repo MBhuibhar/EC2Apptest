@@ -31,9 +31,7 @@ data "aws_iam_policy_document" "ecs_module_managed_execution_role_policy" {
     resources = ["*"]
   }
 
-  dynamic "statement" {
-    for_each = var.ecr_image == "" ? [1] : []
-    content {
+  statement {
       effect = "Allow"
       actions = [
         "ecr:BatchCheckLayerAvailability",
@@ -43,7 +41,6 @@ data "aws_iam_policy_document" "ecs_module_managed_execution_role_policy" {
       resources = [
         aws_ecr_repository.this[0].arn
       ]
-    }
   }
 }
 
