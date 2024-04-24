@@ -95,5 +95,5 @@ data "external" "ecr_latest_image" {
   name = var.ecr_image
 }*/
 data "aws_ecr_repository" "ecr_repo" {
-  name = "${var.account_id}.dkr.ecr.eu-west-1.amazonaws.com/pite-dldeb-${var.env}-${var.service_name}-ecr-repo"
+  name = "${var.account_id}.dkr.ecr.eu-west-1.amazonaws.com/pite-dldeb${var.env}-${var.service_name}-ecr-repo"
 }
