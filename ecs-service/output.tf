@@ -1,10 +1,10 @@
 output "sql_service_ecr_repo_url" {
-  value       = module.pite-dldeb_services_SQL_service.ecr_repository_url
+  value       = module.pite-dldeb-SQL.ecr_repository_url     #pite-dldeb_services_SQL_service
   description = "Db service ECR repository URL"
 }
 
 output "sql_service_ecr_repo_arn" {
-  value       = module.pite-dldeb_services_SQL_service.ecr_repository_arn
+  value       = module.pite-dldeb-SQL.ecr_repository_arn     ##pite-dldeb_services_SQL_service
   description = "DB service ECR repository ARN"
 }
  /*output "ecr_repository_url" {
