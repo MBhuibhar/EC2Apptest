@@ -11,19 +11,43 @@ variable "account_selector" {
     "prod"  : ""
   }
 }
-variable "db" {}
+variable "db" {
+  type = string
+  description = "DB service name"
+  default = ""
+}
 
-variable "env" {}
+variable "env" {
+  type = string
+  description = "Environment where resources to be deploy"
+  default = ""
+}
 
 #variable "aws_region" {}
 
-variable "key" {}
+variable "key" {
+  type = string
+  description = "S3 bucket key"
+  default = ""
+}
 
-variable "region" {}
+variable "region" {
+  type = string
+  description = "AWS region"
+  default = ""
+}
 
-variable "bucket" {}
+variable "bucket" {
+  type = string
+  description = "S3 bucket name"
+  default = ""
+}
 
-variable "assume_role" {}
+variable "assume_role" {
+  type = string
+  description = "Assume role"
+  default = ""
+}
 
 #variable "account_id" {}
 
