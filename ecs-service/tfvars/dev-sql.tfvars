@@ -15,6 +15,7 @@ ecr_image             = "609258630391.dkr.ecr.eu-west-1.amazonaws.com/pite-dldeb
 assume_role           = ""
 iam_role              = ""
 ecs_cluster_name      = "arn:aws:ecs:eu-central-1:${var.account_id}:cluster/pite-dldeb-${var.env}-ecs-cluster"
+secret_name           = "pite-dldeb-${var.service_name}-${var.env}-debezium-kafka-service"
 fargate_resources    = {
     pite-dldeb_services_SQL_all_service = {
       cpu    = "4096"
