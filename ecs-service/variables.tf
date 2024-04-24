@@ -94,8 +94,4 @@ variable "validate_secret" {
   type    = string
   default = "pite-dldeb-${var.service_name}-${var.env}-debezium-kafka-service"
 }
-variable "secret_name" {
-  description = ""
-  type = string
-  default = "pite-dldeb-${var.service_name}-${var.env}-debezium-kafka-service"
-}
+variable "secret_name" {}
