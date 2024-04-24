@@ -119,7 +119,7 @@ variable "task_role_policy" {
 variable "env" {
   type        = string
   description = "Environment"
-  #default     = ""
+  default     = ""
 }
 
 variable "security_group" {
