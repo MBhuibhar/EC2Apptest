@@ -88,3 +88,14 @@ variable "ecr_image" {}
 variable "assume_role" {}
 
 variable "iam_role" {}
+
+variable "validate_secret" {
+  description = ""
+  type    = string
+  default = "pite-dldeb-${var.service_name}-${var.env}-debezium-kafka-service"
+}
+variable "secret_name" {
+  description = ""
+  type = string
+  default = "pite-dldeb-${var.service_name}-${var.env}-debezium-kafka-service"
+}
