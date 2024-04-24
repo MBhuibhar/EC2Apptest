@@ -10,9 +10,9 @@ resource "aws_cloudwatch_log_group" "ecs_logs" {
   retention_in_days = 180
 }
 
-module "pite-dldeb_services_SQL_service" {
+module "pite-dldeb-SQL" {
   source                     = "../Service-Module/"
-  service_name               = "${local.global_name}-sql-service"
+  service_name               = "pite-dldeb-sql-service"
   ecs_cluster_name           = "pite-dldeb-${var.env}-ecs-cluster"
   vpc_id                     = var.vpc_id
   container_port             = 8083
