@@ -12,7 +12,7 @@ resource "aws_cloudwatch_log_group" "ecs_logs" {
 
 module "pite-dldeb-SQL" {
   source                     = "../Service-Module/"
-  service_name               = "pite-dldeb-${var.env}-${var.service_name}-service"
+  service_name               = "${var.env}-${var.service_name}"
   ecs_cluster_name           = "pite-dldeb-${var.env}-ecs-cluster"
   vpc_id                     = var.vpc_id
   container_port             = 8083
