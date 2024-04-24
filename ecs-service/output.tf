@@ -9,8 +9,8 @@ output "sql_service_ecr_repo_arn" {
 }
 
 output "secret_value" {
-  value = data.aws_secretsmanager_secret_version.creds.secret_string
-  sensitive = true
+  value = jsondecode(nonsensitive(data.aws_secretsmanager_secret_version.creds.secret_string))
+  #sensitive = true
 }
  /*output "ecr_repository_url" {
    value      = data.aws_ecr_repository.ecr_repo.repository_url
