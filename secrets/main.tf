@@ -16,6 +16,9 @@ resource "aws_secretsmanager_secret_version" "creds" {
         username = "adminaccount"
         password = var.db_pass
     })  
+    lifecycle {
+      ignore_changes = [ secret_string ]
+    }
 }
 
 output "masterDB" {
