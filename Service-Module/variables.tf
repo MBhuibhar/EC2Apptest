@@ -42,11 +42,11 @@ variable "max_service_replicas" {
 #########################################
 ### Container definiton parameters ######
 #########################################
-/*variable "ecr_image" {
+variable "ecr_image" {
   type        = string
   description = "Repository URL of the ECR image to deploy with tag, if not will be managed by the module"
   default     = ""
-}*/
+}
 
 variable "container_environment_variables" {
   type        = list(map(string))
