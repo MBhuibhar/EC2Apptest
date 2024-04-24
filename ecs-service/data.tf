@@ -89,5 +89,5 @@ data "aws_secretsmanager_secret_version" "creds" {
 }
 output "secret_value" {
   value = data.aws_secretsmanager_secret_version.creds.secret_string
-  sensitive = true
+  #sensitive = true
 }
