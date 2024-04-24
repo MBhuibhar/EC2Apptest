@@ -88,5 +88,3 @@ variable "ecr_image" {}
 variable "assume_role" {}
 
 variable "iam_role" {}
-
-variable "secret_name" {}
