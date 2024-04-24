@@ -87,7 +87,3 @@ data "aws_secretsmanager_secrets" "masterDB" {
 data "aws_secretsmanager_secret_version" "creds" {
   secret_id = "pite-dldeb-${var.service_name}-${var.env}-admin"  #"arn:aws:secretsmanager:eu-west-1:609258630391:secret:pite-dldeb-sql-dev-admin-gVmT1J"
 }
-output "secret_value" {
-  value = data.aws_secretsmanager_secret_version.creds.secret_string
-  #sensitive = true
-}
