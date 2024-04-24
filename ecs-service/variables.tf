@@ -83,7 +83,7 @@ variable "aws_region" {}
 
 variable "service_name" {}
 
-#variable "ecr_image" {}
+variable "ecr_image" {}
 
 variable "assume_role" {}
 
