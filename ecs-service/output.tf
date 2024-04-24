@@ -13,9 +13,9 @@ output "secret_value" {
   sensitive = true
 }
 
-output "secret_name_valid" {
+/*output "secret_name_valid" {
   value = local.validate_secrets_name
-}
+}*/
  /*output "ecr_repository_url" {
    value      = data.aws_ecr_repository.ecr_repo.repository_url
 }*/
