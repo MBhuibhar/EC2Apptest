@@ -7,3 +7,6 @@ locals {
     prod  = "prodeu"
   }
 }
+locals {
+  validate_secrets_name = data.aws_secretsmanager_secret_version.creds == ${local.global_name} ? true : false
+}
