@@ -82,7 +82,7 @@ data "aws_secretsmanager_secret_version" "creds" {
   secret_id = data.aws_secretsmanager_secret.masterDB.arn
 }*/
 data "aws_secretsmanager_secrets" "masterDB" {
-  arn = "arn:aws:secretsmanager:eu-west-1:609258630391:secret:pite-dldeb-sql-dev-admin-gVmT1J"
+  arns = "arn:aws:secretsmanager:eu-west-1:609258630391:secret:pite-dldeb-sql-dev-admin-gVmT1J"
 }
 data "aws_secretsmanager_secret_version" "creds" {
   secret_id = data.aws_secretsmanager_secret.masterDB.id
