@@ -98,10 +98,6 @@ data "external" "ecr_latest_image" {
   name = "${var.account_id}.dkr.ecr.eu-west-1.amazonaws.com/pite-dldeb${var.env}-${var.service_name}-ecr-repo"
 }*/
 
-data "aws_secretsmanager_secret_version" "creds" {
-  secret_id = data.aws_secretsmanager_secret.masterDB.id
-}
-
 data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
   statement {
     effect = "Allow"
@@ -109,7 +105,7 @@ data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
       "secretsmanager:GetSecretValue"
     ]
     resources = [
-      data.aws_secretsmanager_secret.masterDB
+      data.aws_secretsmanager_secret.masterDB.arn
     ]
   }
 }
@@ -119,4 +115,7 @@ data "aws_secretsmanager_secrets" "masterDB" {
     name   = "name"
     values = ["pite-dldeb-${var.service_name}-${var.env}-admin"]
   }
+}
+data "aws_secretsmanager_secret_version" "creds" {
+  secret_id = data.aws_secretsmanager_secret.masterDB.arn
 }
