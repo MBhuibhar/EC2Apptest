@@ -86,5 +86,5 @@ data "aws_secretsmanager_secrets" "masterDB" {
 }*/
 data "aws_secretsmanager_secret_version" "creds" {
   count = var.secret_name == "pite-dldeb-${var.service_name}-${var.env}-debezium-kafka-service" ? 1 : 0
-  name  = var.secret_name  #Name or Arn #secret_id
+  secret_id  = var.secret_name  #Name or Arn #secret_id
 }
