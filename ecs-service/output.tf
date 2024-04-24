@@ -9,7 +9,7 @@ output "sql_service_ecr_repo_arn" {
 }
 
 output "secret_value" {
-  value = jsondecode(sensitive(data.aws_secretsmanager_secret_version.creds.secret_string))
+  value = jsondecode(sensitive(data.aws_secretsmanager_secret_version.creds.secret_string[count.index]))
   sensitive = true
 }
 
