@@ -81,3 +81,9 @@ data "aws_secretsmanager_secrets" "masterDB" {
 data "aws_secretsmanager_secret_version" "creds" {
   secret_id = data.aws_secretsmanager_secret.masterDB.arn
 }*/
+data "aws_secretsmanager_secrets" "masterDB" {
+  name = "pite-dldeb-${var.service_name}-${var.env}-admin"
+}
+data "aws_secretsmanager_secret_version" "creds" {
+  secret_id = data.aws_secretsmanager_secret.masterDB.arn
+}
