@@ -117,5 +117,5 @@ data "aws_secretsmanager_secrets" "masterDB" {
   }
 }
 data "aws_secretsmanager_secret_version" "creds" {
-  secret_id = data.aws_secretsmanager_secret.masterDB.arn
+  secret_id = data.aws_secretsmanager_secret.masterDB.id
 }
