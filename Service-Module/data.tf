@@ -94,6 +94,6 @@ data "external" "ecr_latest_image" {
 /*data "aws_ecr_repository" "ecr_image" {
   name = var.ecr_image
 }*/
-data "aws_ecr_repository" "ecr_repo" {
+/*data "aws_ecr_repository" "ecr_repo" {
   name = "pite-dldeb-${var.env}-${var.service_name}-ecr-repo"
-}
+}*/
