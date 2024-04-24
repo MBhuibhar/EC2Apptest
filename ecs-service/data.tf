@@ -60,15 +60,6 @@ data "aws_iam_policy" "pite-dldeb-pullfromecr" {
   name = "arn:aws:iam::aws:policy/pite-dldeb-${var.env}-pullfromecr"
 }*/
 
-/*data "aws_secretsmanager_secret" "masterDB" {
-  arn = aws_secretsmanager_secret.masterDB.arn
-
-}
-
-data "aws_secretsmanager_secret_version" "creds" {
-  secret_id = data.aws_secretsmanager_secret.masterDB.id
-}
-
 data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
   statement {
     effect = "Allow"
@@ -86,4 +77,7 @@ data "aws_secretsmanager_secrets" "masterDB" {
     name   = "name"
     values = ["pite-dldeb-${var.service_name}-${var.env}-admin"]
   }
-}*/
+}
+data "aws_secretsmanager_secret_version" "creds" {
+  secret_id = data.aws_secretsmanager_secret.masterDB.arn
+}
