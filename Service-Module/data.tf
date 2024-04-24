@@ -98,7 +98,7 @@ data "external" "ecr_latest_image" {
   name = "${var.account_id}.dkr.ecr.eu-west-1.amazonaws.com/pite-dldeb${var.env}-${var.service_name}-ecr-repo"
 }*/
 
-data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
+/*data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
   statement {
     effect = "Allow"
     actions = [
@@ -118,4 +118,4 @@ data "aws_secretsmanager_secrets" "masterDB" {
 }
 data "aws_secretsmanager_secret_version" "creds" {
   secret_id = data.aws_secretsmanager_secret.masterDB.id
-}
+}*/
