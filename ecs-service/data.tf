@@ -60,7 +60,7 @@ data "aws_iam_policy" "pite-dldeb-pullfromecr" {
   name = "arn:aws:iam::aws:policy/pite-dldeb-${var.env}-pullfromecr"
 }*/
 
-data "aws_secretsmanager_secret" "masterDB" {
+/*data "aws_secretsmanager_secret" "masterDB" {
   arn = aws_secretsmanager_secret.masterDB.arn
 
 }
@@ -86,4 +86,4 @@ data "aws_secretsmanager_secrets" "masterDB" {
     name   = "name"
     values = ["pite-dldeb-${var.service_name}-${var.env}-admin"]
   }
-}
+}*/
