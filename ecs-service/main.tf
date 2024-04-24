@@ -25,7 +25,7 @@ module "pite-dldeb-SQL" {
   #ecr_image                   = "var.ecr_image"
   #iam_role                   = "var.iam_role"
   #security_group             = "var.security_group"
-  depends_on = [ data.aws_secretsmanager_secret_version.creds.arn ]
+  depends_on = [ data.aws_secretsmanager_secret_version.creds ]
 
   container_environment_variables = [
     {
