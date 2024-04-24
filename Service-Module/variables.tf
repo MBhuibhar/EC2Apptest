@@ -136,5 +136,5 @@ variable "iam_role" {
 variable "account_id" {
   type        = number
   description = "AWS Account id"
-  default     = ""
+  default     = "609258630391"
 }
