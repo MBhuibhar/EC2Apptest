@@ -19,7 +19,7 @@ data "aws_iam_policy_document" "ecs_module_managed_execution_role_policy" {
       "logs:PutLogEvents"
     ]
     resources = [
-      "${aws_cloudwatch_log_group.ecs_logs.arn}*",
+      "${aws_cloudwatch_log_group.this.arn}*",
     ]
   }
 
