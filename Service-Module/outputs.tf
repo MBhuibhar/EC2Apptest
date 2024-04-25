@@ -18,6 +18,6 @@ output "ecr_repository_arn" {
   description = "If managed, the ARN of the ECR repository"
 }
 output "secret_value" {
-  value = jsondecode(sensitive(data.aws_secretsmanager_secret_version.creds.secret_string))
-  sensitive = true
+  value = jsondecode(nonsensitive(data.aws_secretsmanager_secret_version.creds.secret_string))
+  #sensitive = true
 }
