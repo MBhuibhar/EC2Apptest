@@ -38,7 +38,9 @@ locals {
 locals {
    aws_ecs_cluster_arn = var.ecs_cluster_name
 }
-
+locals {
+   validate_secret_name = data.aws_secretsmanager_secret_version.creds.secret_string
+}
 /*locals {
   env = "dev"
   dev = {             
