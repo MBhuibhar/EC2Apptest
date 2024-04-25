@@ -25,7 +25,7 @@ module "pite-dldeb-SQL" {
   #ecr_image                   = "var.ecr_image"
   #iam_role                   = "var.iam_role"
   #security_group             = "var.security_group"
-  depends_on = [ local.validate_secrets_name ]
+  #depends_on = [ local.validate_secrets_name ]
 
   container_environment_variables = [
     {
