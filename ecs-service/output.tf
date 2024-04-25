@@ -18,9 +18,9 @@ output "secret_value" {
   description = "The name of the log group"
 }*/
 
-/*output "secret_name_valid" {
-  value = module.pite-dldeb-SQL      #data.aws_secretsmanager_secret_version.creds.secret_string
-}*/
+output "secret_name_valid" {
+  value = data.aws_secretsmanager_secret_version.creds.secret_string
+}
  /*output "ecr_repository_url" {
    value      = data.aws_ecr_repository.ecr_repo.repository_url
 }*/
