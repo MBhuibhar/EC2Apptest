@@ -13,10 +13,10 @@ output "secret_value" {
   sensitive = true
 }
 
-output "cloudwatch_log_group" {
+/*output "cloudwatch_log_group" {
   value       = aws_cloudwatch_log_group.this.name
   description = "The name of the log group"
-}
+}*/
 
 /*output "secret_name_valid" {
   value = module.pite-dldeb-SQL      #data.aws_secretsmanager_secret_version.creds.secret_string
