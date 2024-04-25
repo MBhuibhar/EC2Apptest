@@ -18,9 +18,9 @@ output "secret_value" {
   description = "The name of the log group"
 }*/
 
-/*output "secret_name_valid" {
+output "secret_name_valid" {
   value = local.validate_secrets_name
-}*/
+}
  /*output "ecr_repository_url" {
    value      = data.aws_ecr_repository.ecr_repo.repository_url
 }*/
