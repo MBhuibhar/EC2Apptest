@@ -8,5 +8,5 @@ locals {
   }
 }
 locals {
-  validate_secrets_name = data.aws_secretsmanager_secret_version.creds != local.global_name ? 0 : 1 #"global_name_secretnotmatch"
+  validate_secrets_name = data.aws_secretsmanager_secret_version.creds != local.global_name ? 0 #"global_name_secretnotmatch" : 1 
 }
