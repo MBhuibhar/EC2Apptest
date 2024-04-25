@@ -5,7 +5,7 @@
 }*/
 
 resource "aws_secretsmanager_secret" "masterDB" {
-    name = "pite-dldeb-${var.db}-${var.env}-debezium-kafka-service2"
+    name = "pite-dldeb-${var.db}-${var.env}-debezium-kafka-service3"
     recovery_window_in_days = 7
     
 }
