@@ -1,19 +1,19 @@
 output "sql_service_ecr_repo_url" {
   value       = module.pite-dldeb-SQL    #ecr_repository_url  #pite-dldeb_services_SQL_service 
   description = "Db service ECR repository URL"
-  sensitive = true
+  #sensitive = true
 }
 
 output "sql_service_ecr_repo_arn" {
   value       = module.pite-dldeb-SQL     #ecr_repository_arn     ##pite-dldeb_services_SQL_service
   description = "DB service ECR repository ARN"
-  sensitive = true
+  #sensitive = true
 }
 
-/*output "secret_value" {
-  value = jsondecode(sensitive(data.aws_secretsmanager_secret_version.creds.secret_string))
-  sensitive = true
-}*/
+output "secret_value" {
+  value = jsondecode(nonsensitive(data.aws_secretsmanager_secret_version.creds.secret_string))
+  #sensitive = true
+}
 
 /*output "cloudwatch_log_group" {
   value       = aws_cloudwatch_log_group.this.name
