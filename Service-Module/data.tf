@@ -120,5 +120,5 @@ data "aws_secretsmanager_secret_version" "creds" {
   secret_id = data.aws_secretsmanager_secret.masterDB.id
 }*/
 data "aws_secretsmanager_secret_version" "creds" {
-  secret_id = "pite-dldeb-${var.service_name}-${var.env}-debezium-kafka" #Name or Arn #secret_id
+  secret_id = "${var.service_name}"                    #Name or Arn #secret_id
 }
