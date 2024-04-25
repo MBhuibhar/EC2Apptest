@@ -8,10 +8,10 @@ output "sql_service_ecr_repo_arn" {
   description = "DB service ECR repository ARN"
 }
 
-output "secret_value" {
+/*output "secret_value" {
   value = jsondecode(sensitive(data.aws_secretsmanager_secret_version.creds.secret_string))
   sensitive = true
-}
+}*/
 
 /*output "cloudwatch_log_group" {
   value       = aws_cloudwatch_log_group.this.name
