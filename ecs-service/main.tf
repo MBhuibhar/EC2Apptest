@@ -12,7 +12,7 @@ output "module_ecr_repository_url" {
 
 module "pite-dldeb-SQL" {
   source                     = "../Service-Module/"
-  service_name               = "${local.global_name}-service3"
+  service_name               = "${local.global_name}-service"
   ecs_cluster_name           = "pite-dldeb-${var.env}-ecs-cluster"
   vpc_id                     = var.vpc_id
   container_port             = 8083
