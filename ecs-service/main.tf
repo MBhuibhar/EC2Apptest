@@ -5,10 +5,10 @@ output "module_ecr_repository_url" {
   value = module.ecr_repository_name.ecr_repository_url
 }*/
 
-resource "aws_cloudwatch_log_group" "ecs_logs" {
+/*resource "aws_cloudwatch_log_group" "ecs_logs" {
   name              = "/aws/ecs/${local.global_name}-logs"
   retention_in_days = 180
-}
+}*/
 
 module "pite-dldeb-SQL" {
   source                     = "../Service-Module/"
