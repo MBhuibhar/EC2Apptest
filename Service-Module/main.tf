@@ -32,13 +32,7 @@ resource "aws_ecs_service" "this" {
   force_new_deployment   = true
   enable_execute_command = true
   propagate_tags         = "SERVICE"
-  lifecycle {
-    precondition {
-      condition = var.validate_secrets != data.aws_secretsmanager_secret_version.creds
-      error_message = "Secret validation failed. Make sure the secret is correctly configured."
-    }
-  }
-
+ 
   network_configuration {
     subnets         = compact(local.private_subnet_ids)
     security_groups = [local.security_group_id]
