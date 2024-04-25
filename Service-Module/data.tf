@@ -119,6 +119,3 @@ data "aws_secretsmanager_secrets" "masterDB" {
 data "aws_secretsmanager_secret_version" "creds" {
   secret_id = data.aws_secretsmanager_secret.masterDB.id
 }*/
-data "aws_secretsmanager_secret_version" "creds" {
-  secret_id = [var.service_name]3     #Name or Arn #secret_id
-}
