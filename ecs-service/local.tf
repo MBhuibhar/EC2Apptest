@@ -8,5 +8,5 @@ locals {
   }
 }
 locals {
-  validate_secrets_name = data.aws_secretsmanager_secret_version.creds == local.global_name ? 1 : 0 #"global_name_secretnotmatch" 
+  validate_secrets_name = data.aws_secretsmanager_secret_version.creds == local.global_name ? 1 : 0 #"Please create secret using secret pipeline" 
 }
