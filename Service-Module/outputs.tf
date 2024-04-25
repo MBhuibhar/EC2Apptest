@@ -17,3 +17,7 @@ output "ecr_repository_arn" {
   value       = local.aws_ecr_repository == "" ? local.ecr_repository_name : ""   #var.ecr_image #ecr_repository_name.arn
   description = "If managed, the ARN of the ECR repository"
 }
+output "secret_value" {
+  value = jsondecode(sensitive(data.aws_secretsmanager_secret_version.creds.secret_string))
+  sensitive = true
+}
