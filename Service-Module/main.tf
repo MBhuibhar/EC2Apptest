@@ -23,7 +23,7 @@ resource "aws_ecs_task_definition" "this" {
 }
 
 resource "aws_ecs_service" "this" {
-  depends_on             = local.validate_secrets_name       #[aws_iam_role.task_role]
+  #depends_on             = local.validate_secrets_name       #[aws_iam_role.task_role]
   name                   = var.service_name
   cluster                = local.aws_ecs_cluster_arn      #data.aws_ecs_cluster.this.arn
   task_definition        = aws_ecs_task_definition.this.arn
