@@ -138,6 +138,3 @@ variable "account_id" {
   description = "AWS Account id"
   default     = ""
 }
-variable "validate_secrets" {
-  default = true
-}
