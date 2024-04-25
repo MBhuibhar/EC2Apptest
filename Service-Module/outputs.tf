@@ -1,5 +1,5 @@
 output "service_arn" {
-  value       = aws_ecs_service.this.id[count.index][0]
+  value       = aws_ecs_service.this.id[count.index]
   description = "The ARN of the service created"
 }
 
