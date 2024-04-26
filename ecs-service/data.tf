@@ -86,10 +86,4 @@ data "aws_secretsmanager_secrets" "masterDB" {
 }*/
 data "aws_secretsmanager_secret_version" "creds" {
   secret_id = "pite-dldeb-${var.service_name}-${var.env}-debezium-kafka-service3" #Name or Arn #secret_id
-  lifecycle {
-    precondition {
-      condition = data.aws_secretsmanager_secret_version.creds.secret_string != local.global_name
-      error_message = "Secret must be created before executing pipeline"
-      }
-    }
-  }
+}
