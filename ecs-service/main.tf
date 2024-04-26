@@ -26,12 +26,12 @@ module "pite-dldeb-SQL" {
   #iam_role                   = "var.iam_role"
   #security_group             = "var.security_group"
   #depends_on = [ local.validate_secrets_name ]
-  lifecycle {
+  /*lifecycle {
     precondition {
       condition = data.aws_secretsmanager_secret_version.creds.secret_string != local.global_name
       error_message = "Secret must be created before executing pipeline"
       }
-    }
+    }*/
 
   container_environment_variables = [
     {
