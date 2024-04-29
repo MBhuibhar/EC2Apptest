@@ -6,7 +6,6 @@ locals {
     stage = "stageeu"
     prod  = "prodeu"
   }
-}
-locals {
-  validate_secrets_name = data.aws_secretsmanager_secret.masterDB == local.global_name ? 1 : "Please_create_secret" 
+  dbsecrets_name = jsondecode(sensitive(data.aws_secretsmanager_secret_version.creds.secret_string))
+  #data.aws_secretsmanager_secret.masterDB == local.global_name ? 1 : "Please_create_secret" 
 }
