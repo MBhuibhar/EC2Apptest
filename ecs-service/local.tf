@@ -6,5 +6,5 @@ locals {
     stage = "stageeu"
     prod  = "prodeu"
   }
-  dbsecret_name = jsondecode(sensitive(data.aws_secretsmanager_secret_version.creds.secret_string)) 
+  dbsecret_name = jsondecode(nonsensitive(data.aws_secretsmanager_secret_version.creds.secret_string)) 
 }
