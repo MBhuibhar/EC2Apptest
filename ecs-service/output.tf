@@ -8,19 +8,19 @@ output "sql_service_ecr_repo_arn" {
   description = "DB service ECR repository ARN"
 }
 
-/*output "secret_value" {
+output "secret_value" {
   value = data.aws_secretsmanager_secret.masterDB.arn
   #sensitive = true
-}*/
+}
 
 /*output "cloudwatch_log_group" {
   value       = aws_cloudwatch_log_group.this.name
   description = "The name of the log group"
 }*/
 
-output "secret_name_valid" {
+/*output "secret_name_valid" {
   value = local.validate_secrets_name
-}
+}*/
  /*output "ecr_repository_url" {
    value      = data.aws_ecr_repository.ecr_repo.repository_url
 }*/
