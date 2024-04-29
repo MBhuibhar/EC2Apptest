@@ -7,6 +7,6 @@ locals {
     prod  = "prodeu"
   }
 }
-/*locals {
-  validate_secrets_name = data.aws_secretsmanager_secret_version.creds == local.global_name ? 1 : "Please_create_secret" 
-}*/
+locals {
+  validate_secrets_name = data.aws_secretsmanager_secret.masterDB == local.global_name ? 1 : "Please_create_secret" 
+}
