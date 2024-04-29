@@ -10,7 +10,7 @@ output "sql_service_ecr_repo_arn" {
 
 output "secret_value" {
   value = data.aws_secretsmanager_secret.masterDB.arn   #jsondecode(sensitive(data.aws_secretsmanager_secret.masterDB.arn))
-  sensitive = true
+  #sensitive = true
 }
 
 /*output "cloudwatch_log_group" {
