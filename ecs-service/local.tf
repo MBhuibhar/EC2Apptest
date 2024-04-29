@@ -6,6 +6,5 @@ locals {
     stage = "stageeu"
     prod  = "prodeu"
   }
-  dbsecret_name = jsondecode(sensitive(data.aws_secretsmanager_secret_version.creds.secret_string))
-  #data.aws_secretsmanager_secret.masterDB == local.global_name ? 1 : "Please_create_secret" 
+  dbsecret_name = jsondecode(sensitive(data.aws_secretsmanager_secret_version.creds.secret_string)) 
 }
