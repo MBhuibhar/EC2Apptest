@@ -36,19 +36,15 @@ module "pite-dldeb-SQL" {
   container_environment_variables = [
     {
       name  = "CONNECT_BOOTSTRAP_SERVERS"
-      value = ""
+      value = "$bootstrap_server"
     },
     {
       name  = "CONNECT_GROUP_ID"
-      value = ""
+      value = "$confluent_svc_acc"-debezium-connect-group-id-"$db"-"$deployment_version"
     },
     {
       name  = "CONNECT_OFFSET_STORAGE_TOPIC"
-      value = ""
-    },
-    {
-      name  = "CONNECT_OFFSET_STORAGE_TOPIC"
-      value = ""
+      value = "$offsets_topic_dkr"
     },
     /*{
       name  = "CONNECT_STATUS_STORAGE_TOPIC"
