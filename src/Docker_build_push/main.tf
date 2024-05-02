@@ -17,7 +17,7 @@
 
      volumes {
        container_path = "/kafka/config"
-       host_path      = "./config/"
+       #host_path      = "./config/"
        read_only      = true
      }
    }
