@@ -10,11 +10,20 @@ variable "account_selector" {
 
 variable "env" {}
 
-variable "key" {}
+variable "key" {
+  type = string
+  default = ""
+}
 
-variable "region" {}
+variable "region" {
+  type = string
+  default = ""
+}
 
-variable "bucket" {}
+variable "bucket" {
+  type = string
+  default = ""
+}
 
 variable "assume_role" {}
 
