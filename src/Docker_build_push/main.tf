@@ -13,7 +13,7 @@
 
    resource "docker_container" "debezium" {
      name  = "pite-dldeb-${var.service_name}-${var.env}-container"
-     image = docker_image.debezium
+     image = docker_image.debezium.image_id
 
      volumes {
        container_path = "/kafka/config"
