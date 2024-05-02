@@ -1,6 +1,6 @@
-output "dockerimage" {
+/*output "dockerimage" {
    value = data.docker_image.debezium
-}
+}*/
 
 /*output "dockercontainer" {
   value = data.docker_container.debezium
