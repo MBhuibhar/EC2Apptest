@@ -1,6 +1,9 @@
 locals {
-  ecr_repository_name = "${var.service_name}-ecr-repo"                  #"local.aws_ecr_repository"     #local.aws_ecr_repository
-  ecr_latest_image    = data.external.ecr_latest_image.result.image_tag == "" ? "latest" : data.external.ecr_latest_image.result.image_tag
+  role_arn             = "arn:aws:iam::aws:role/pite-dldeb-${var.env}-ecs-iam-role"
+  security_group_id    = var.security_group
+  aws_ecs_cluster_arn  = var.ecs_cluster_name
+  ecr_repository_name  = "${var.service_name}-ecr-repo"                  #"local.aws_ecr_repository"     #local.aws_ecr_repository
+  ecr_latest_image     = data.external.ecr_latest_image.result.image_tag == "" ? "latest" : data.external.ecr_latest_image.result.image_tag
   container_definition = {
     name        = var.service_name
     image       = var.ecr_image == "" ? "${data.aws_ecr_repository.ecr_repo.repository_url}:${local.ecr_latest_image}" : var.ecr_image   #var.ecr_image #local.ecr_repository_name.repository_url
@@ -26,18 +29,11 @@ locals {
   }
   private_subnet_ids = [for k, v in data.aws_subnets.private_subnets : length(v.ids) > 0 ? v.ids[0] : ""]
 }
-locals {
-  role_arn = "arn:aws:iam::aws:role/pite-dldeb-${var.env}-ecs-iam-role"
-}
-locals {
-  security_group_id = var.security_group
-}
+
 /*locals {
   aws_ecr_repository = "${var.service_name}-ecr-repo"  #var.ecr_image   #data.aws_ecr_repository.ecr_repo
 }*/
-locals {
-   aws_ecs_cluster_arn = var.ecs_cluster_name
-}
+
 
 /*locals {
   env = "dev"
