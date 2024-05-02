@@ -1,5 +1,5 @@
 locals {
-  ecr_repository_name = "pite-dldeb-${var.service_name}-${var.env}-ecr-repo"     #local.aws_ecr_repository
+  ecr_repository_name = "local.aws_ecr_repository"     #local.aws_ecr_repository
   ecr_latest_image    = data.external.ecr_latest_image.result.image_tag == "" ? "latest" : data.external.ecr_latest_image.result.image_tag
   container_definition = {
     name        = var.service_name
