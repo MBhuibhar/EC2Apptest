@@ -1,5 +1,5 @@
 locals {
-  ecr_repository_name = "local.aws_ecr_repository"     #local.aws_ecr_repository
+  ecr_repository_name = "${var.service_name}-ecr-repo"                  #"local.aws_ecr_repository"     #local.aws_ecr_repository
   ecr_latest_image    = data.external.ecr_latest_image.result.image_tag == "" ? "latest" : data.external.ecr_latest_image.result.image_tag
   container_definition = {
     name        = var.service_name
@@ -32,9 +32,9 @@ locals {
 locals {
   security_group_id = var.security_group
 }
-locals {
+/*locals {
   aws_ecr_repository = "${var.service_name}-ecr-repo"  #var.ecr_image   #data.aws_ecr_repository.ecr_repo
-}
+}*/
 locals {
    aws_ecs_cluster_arn = var.ecs_cluster_name
 }
