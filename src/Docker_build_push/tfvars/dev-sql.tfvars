@@ -15,7 +15,7 @@ ecr_image             =  "609258630391.dkr.ecr.eu-west-1.amazonaws.com/pite-dlde
 assume_role           = ""
 #iam_role              = ""
 ecs_cluster_name      = "arn:aws:ecs:eu-central-1:${var.account_id}:cluster/pite-dldeb-${var.env}-ecs-cluster"
-fargate_resources    = {
+/*fargate_resources    = {
     pite-dldeb_services_SQL_all_service = {
       cpu    = "4096"
       memory = "30720"
@@ -24,4 +24,4 @@ pite-dldeb_services_MYSQL_all_service = {
       cpu    = "4096"
       memory = "30720"
     }
-}
+}*/
