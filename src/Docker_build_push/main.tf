@@ -5,7 +5,7 @@
 
    resource "docker_image" "debezium" {
      name         = "pite-dldeb-${var.db}-${var.env}-docker-image"
-     build        = {
+     build {
        context    = "."
        dockerfile = "./container-image/Dockerfile.kafka"
      }
