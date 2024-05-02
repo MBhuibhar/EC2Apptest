@@ -47,9 +47,9 @@ data "aws_iam_policy_document" "ecs_module_managed_execution_role_policy" {
 data "aws_ecr_repository" "ecr_repo" {
   name = "${var.service_name}-ecr-repo.repository_url"
 }
-output "ecr_repo_name" {
+/*output "ecr_repo_name" {
   value = aws_ecr_repository_ecr_repo.repository_url
-}
+}*/
 /*data "aws_iam_role" "iam_role_ecs_terraform" {
   name = var.iam_role
 }
