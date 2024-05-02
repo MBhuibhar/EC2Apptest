@@ -95,7 +95,7 @@ data "external" "ecr_latest_image" {
   name = var.ecr_image
 }*/
 /*data "aws_ecr_repository" "ecr_repo" {
-  name = "${var.account_id}.dkr.ecr.eu-west-1.amazonaws.com/pite-dldeb${var.env}-${var.service_name}-ecr-repo"
+  name = "${var.service_name}-${var.env}-ecr-repo"
 }*/
 
 /*data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
