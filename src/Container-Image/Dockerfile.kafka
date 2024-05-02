@@ -1,0 +1,6 @@
+FROM confluentinc/cp-kafka-connect-base
+
+# Install Plugins
+RUN confluent-hub install --no-prompt confluentinc/kafka-connect-avro-converter:latest
+RUN confluent-hub install --no-prompt debezium/debezium-connector-sqlserver--${debezium_version}.Final-plugin.tar.gz
+RUN --env
