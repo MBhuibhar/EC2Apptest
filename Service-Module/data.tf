@@ -95,7 +95,7 @@ data "external" "ecr_latest_image" {
   name = var.ecr_image
 }*/
 data "aws_ecr_repository" "ecr_repo" {
-  name = "${var.service_name}-ecr-repo.repository_url"
+  name = "${var.service_name}-ecr-repo"
 }
 /*output "ecr_repo_name" {
   value = aws_ecr_repository_ecr_repo.repository_url
