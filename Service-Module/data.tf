@@ -39,7 +39,7 @@ data "aws_iam_policy_document" "ecs_module_managed_execution_role_policy" {
         "ecr:GetDownloadUrlForLayer"
       ]
       resources = [
-        data.aws_ecr_repository.ecr_repo         #aws_ecr_repository.this[0].arn
+        data.aws_ecr_repository.ecr_repo.ecr_repository_arn         #aws_ecr_repository.this[0].arn
       ]
   }
 }
