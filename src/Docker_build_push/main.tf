@@ -12,7 +12,7 @@
    }
 
    resource "docker_container" "debezium" {
-     name  = "pite-dldeb-${var.db}-${var.env}-container"
+     name  = "pite-dldeb-${var.service_name}-${var.env}-container"
      image = docker_image.debezium
 
      volumes {
