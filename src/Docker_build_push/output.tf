@@ -3,7 +3,7 @@ output "dockerimage" {
 }
 
 output "dockercontainer" {
-  value = docker_container.debezium.image_id
+  value = docker_container.debezium
 }
 
 output "dockerbuild" {
