@@ -29,7 +29,9 @@ variable "assume_role" {}
 
 variable "account_id" {}
 
-variable service_name {}
+variable "service_name" {}
+
+variable "aws_region" {}
 
 #################################################################
 #Resource Tags
