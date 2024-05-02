@@ -2,9 +2,9 @@ output "dockerimage" {
    value = data.docker_image.debezium
 }
 
-output "dockercontainer" {
+/*output "dockercontainer" {
   value = data.docker_container.debezium
-}
+}*/
 
 /*output "dockerbuild" {
   value = null_resource.docker_packaging
