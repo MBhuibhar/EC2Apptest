@@ -5,7 +5,7 @@
 terraform {
   backend "s3" {
     bucket = var.bucket
-    region = var.aws_region
+    region = var.region
     key    = var.key
   }
 
