@@ -98,7 +98,7 @@ data "aws_ecr_repository" "ecr_repo" {
   name = "${var.service_name}-ecr-repo"
 }
 output "ecr_repo_name" {
-  value = aws_ecr_repository_ecr_repo.arn
+  value = aws_ecr_repository_ecr_repo
 }
 /*data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
   statement {
