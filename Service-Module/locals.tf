@@ -1,9 +1,9 @@
 locals {
-  ecr_repository_name = local.aws_ecr_repository
-  ecr_latest_image    = local.aws_ecr_repository == "" ? "latest" : local.aws_ecr_repository
+  ecr_repository_name = "pite-dldeb-${var.service_name}-${var.env}-ecr-repo"     #local.aws_ecr_repository
+  ecr_latest_image    = data.external.ecr_latest_image.result.image_tag == "" ? "latest" : data.external.ecr_latest_image.result.image_tag
   container_definition = {
     name        = var.service_name
-    image       = local.aws_ecr_repository == "" ? "${local.ecr_repository_name}:${local.ecr_latest_image}" : local.aws_ecr_repository   #var.ecr_image #local.ecr_repository_name.repository_url
+    image       = var.ecr_image == "" ? "${local.ecr_repository_name.repository_url}:${local.ecr_latest_image}" : var.ecr_image   #var.ecr_image #local.ecr_repository_name.repository_url
     command     = var.command_override
     environment = var.container_environment_variables
     secrets     = var.container_secrets
