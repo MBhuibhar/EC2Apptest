@@ -36,7 +36,8 @@ resource "null_resource" "docker_packaging" {
 	  provisioner "local-exec" {
 	    command = <<EOF
 	    aws ecr get-login-password --region us-west-1 | docker login --username AWS --password-stdin ${var.account_id}.dkr.ecr.us-west-1.amazonaws.com
-	    docker build -t "${data.aws_ecr_repository.debezium_repository.repository_url}:latest"
+	    docker build -t "${data.aws_ecr_repository.debezium_repository.repository_url}"
+            docker tag ${data.aws_ecr_repository.debezium_repository}:latest ${var.account_id}.dkr.ecr.us-west-1.amazonaws.com/${data.aws_ecr_repository.debezium_repository}:latest
 	    docker push "${data.aws_ecr_repository.debezium_repository.repository_url}:latest"
 	    EOF
 	  }
