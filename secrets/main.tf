@@ -13,7 +13,7 @@ resource "aws_secretsmanager_secret" "masterDB" {
 resource "aws_secretsmanager_secret_version" "creds" {
     secret_id = aws_secretsmanager_secret.masterDB.id
     secret_string = jsonencode({
-        username = "adminaccount"
+        username = "var.dbuser"
         password = var.db_pass
     })  
     lifecycle {
