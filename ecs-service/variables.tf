@@ -88,3 +88,4 @@ variable "ecr_image" {}
 variable "assume_role" {}
 
 variable "iam_role" {}
+variable "bucket" {}
