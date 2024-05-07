@@ -42,9 +42,9 @@ variable "eeano" {
 
 
 variable "db_pass" {
-    description = "database administrator password"
-    type = string
-    sensitive = true
+    #description = "database administrator password"
+    #type = string
+    #sensitive = true
 }
 
 variable "env" {}
@@ -58,3 +58,4 @@ variable "key" {}
 variable "region" {}
 
 variable "assume_role" {}
+variable "dbuser" {}
