@@ -90,3 +90,11 @@ data "aws_secretsmanager_secret_version" "creds" {
 data "aws_secretsmanager_secret" "masterDB" {
   name = "pite-dldeb-${var.service_name}-${var.env}-debezium-kafka-service3" #Name or Arn #secret_id
 }
+data "terraform_remote_state" "db" {
+  backend = "s3"
+  config = {
+    bucket = var.bucket
+    key    = "secret/tfstate/${var.env}/${var.env}-${var.service_name}-secret-admin.tfstate"
+    region = eu-central-1
+  }
+}
