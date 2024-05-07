@@ -12,3 +12,6 @@
 output "debezium_repository" {
   value = data.aws_ecr_repository.debezium_repository.repository_url
 }
+output "trigged_by" {
+  value = null_resource.docker_packaging
+}
