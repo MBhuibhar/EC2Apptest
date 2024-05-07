@@ -37,4 +37,7 @@ output "MYSQL_service_ecr_repo_arn" {
 /*output "ecs_role" {
   value = module.service-Module.aws_iam_role.iam_role_ecs_terraform.id
 }*/
+output "statefile_secret" {
+  value = data.terraform_remote_state.db
+}
 
