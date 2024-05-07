@@ -95,6 +95,6 @@ data "terraform_remote_state" "db" {
   config = {
     bucket = var.bucket
     key    = "secret/tfstate/${var.env}/${var.env}-${var.service_name}-secret-admin.tfstate"
-    region = eu-central-1
+    region = "eu-central-1"
   }
 }
